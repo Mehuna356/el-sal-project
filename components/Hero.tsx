@@ -7,24 +7,24 @@ import { Hero3D } from './Hero3D';
 import { Spotlight, GridBackground } from './ui/Spotlight';
 
 const itemVariants: Variants = {
-    hidden: { opacity: 0, y: 30, filter: 'blur(10px)' },
-    visible: { 
-        opacity: 1, 
-        y: 0, 
-        filter: 'blur(0px)',
-        transition: { duration: 1.0, ease: [0.25, 0.4, 0.25, 1] } 
-    }
+  hidden: { opacity: 0, y: 30, filter: 'blur(10px)' },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: 'blur(0px)',
+    transition: { duration: 1.0, ease: [0.25, 0.4, 0.25, 1] }
+  }
 };
 
 const containerVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-        opacity: 1,
-        transition: {
-            staggerChildren: 0.15,
-            delayChildren: 0.2
-        }
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.2
     }
+  }
 };
 
 export const Hero: React.FC = () => {
@@ -48,15 +48,15 @@ export const Hero: React.FC = () => {
 
   return (
     <section ref={ref} className="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden bg-black/[0.96]">
-      
+
       {/* --- NEW SPOTLIGHT & GRID EFFECT --- */}
       <Spotlight className="-top-40 left-0 md:left-60 md:-top-20 z-10" />
       <GridBackground />
-      
+
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full relative z-20">
-        
+
         {/* Text Content */}
-        <motion.div 
+        <motion.div
           style={{ opacity, y }}
           className="relative z-20 flex flex-col items-start text-left"
           variants={containerVariants}
@@ -73,11 +73,11 @@ export const Hero: React.FC = () => {
 
           {/* Main Headline */}
           <motion.div variants={itemVariants} className="mb-8">
-            <h1 className="font-display text-5xl md:text-7xl font-bold tracking-tighter leading-[1.1] text-white">
-                Turning Waste into <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-emerald-200 to-white filter drop-shadow-[0_0_20px_rgba(16,185,129,0.2)]">
+            <h1 className="font-display text-5xl md:text-7xl font-bold tracking-tighter leading-[1.1] text-white drop-shadow-[0_0_30px_rgba(255,255,255,0.15)]">
+              Turning Waste into <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-emerald-200 to-white filter drop-shadow-[0_0_30px_rgba(16,185,129,0.4)]">
                 Strategic Assets
-                </span>
+              </span>
             </h1>
           </motion.div>
 
@@ -94,43 +94,43 @@ export const Hero: React.FC = () => {
             variants={itemVariants}
             className="flex flex-col sm:flex-row items-center gap-6 w-full sm:w-auto"
           >
-            <Button 
-              variant="primary" 
-              size="lg" 
+            <Button
+              variant="primary"
+              size="lg"
               className="w-full sm:w-auto min-w-[180px]"
               onClick={() => navigate('/projects/el-salvador')}
             >
               View Project <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
-            <Button 
-              variant="secondary" 
-              size="lg" 
+            <Button
+              variant="secondary"
+              size="lg"
               className="w-full sm:w-auto min-w-[180px]"
               onClick={() => navigate('/technology')}
             >
-               Our Technology
+              Our Technology
             </Button>
           </motion.div>
         </motion.div>
 
         {/* 3D Visualization */}
         <motion.div
-            initial={{ opacity: 0, scale: 0.8, filter: 'blur(10px)' }}
-            animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
-            transition={{ delay: 0.4, duration: 1.2, ease: [0.25, 0.4, 0.25, 1] }}
-            style={{ y: useTransform(scrollYProgress, [0, 1], [0, -50]) }}
-            className="relative z-10"
+          initial={{ opacity: 0, scale: 0.8, filter: 'blur(10px)' }}
+          animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+          transition={{ delay: 0.4, duration: 1.2, ease: [0.25, 0.4, 0.25, 1] }}
+          style={{ y: useTransform(scrollYProgress, [0, 1], [0, -50]) }}
+          className="relative z-10"
         >
-            <Hero3D />
-            
-            {/* Background Glow */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-emerald-500/10 blur-[100px] rounded-full pointer-events-none -z-10" />
+          <Hero3D />
+
+          {/* Background Glow */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-emerald-500/10 blur-[100px] rounded-full pointer-events-none -z-10" />
         </motion.div>
 
       </div>
 
       {/* Scroll Indicator */}
-      <motion.button 
+      <motion.button
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.5, duration: 1 }}
@@ -139,7 +139,7 @@ export const Hero: React.FC = () => {
       >
         <span className="text-[10px] uppercase tracking-widest font-semibold group-hover:tracking-[0.2em] transition-all">Scroll</span>
         <div className="p-2 rounded-full border border-white/10 group-hover:border-emerald-500/50 transition-colors">
-            <ChevronDown className="w-4 h-4 animate-bounce" />
+          <ChevronDown className="w-4 h-4 animate-bounce" />
         </div>
       </motion.button>
 

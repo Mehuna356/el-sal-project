@@ -205,7 +205,7 @@ export const TechnologyPage: React.FC = () => {
                         <div className="md:col-span-2 relative bg-[#080808] border border-white/10 rounded-[2rem] p-10 overflow-hidden group hover:border-white/20 transition-colors duration-500 flex flex-col md:flex-row items-center justify-between gap-8">
                             <div className="relative z-10 max-w-sm">
                                 <div className="flex items-center gap-3 mb-6">
-                                    <span className="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-wider">Manufacturing</span>
+                                    <span className="px-3 py-1 rounded-full bg-white/5 border border-white/20 text-white/60 text-xs font-bold uppercase tracking-wider">Manufacturing</span>
                                 </div>
                                 <h3 className="text-3xl font-semibold text-white tracking-tight mb-4">OEM Certified Infrastructure</h3>
                                 <p className="text-white/60 leading-relaxed">

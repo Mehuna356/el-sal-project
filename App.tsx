@@ -6,6 +6,8 @@ import { TechnologyPage } from './pages/TechnologyPage';
 import { ElSalvadorPage } from './pages/ElSalvadorPage';
 import { AboutPage } from './pages/AboutPage';
 import { ContactPage } from './pages/ContactPage';
+import { PrivacyPage } from './pages/PrivacyPage';
+import { TermsPage } from './pages/TermsPage';
 import { BackgroundEffects } from './components/BackgroundEffects';
 import { Footer } from './components/Footer';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -31,7 +33,7 @@ const App: React.FC = () => {
       <div className="relative min-h-screen overflow-hidden text-white selection:bg-emerald-500/30 selection:text-emerald-200">
         <BackgroundEffects />
         <ScrollToTop />
-        
+
         <AnimatePresence>
           {isLoaded && (
             <motion.div
@@ -48,6 +50,8 @@ const App: React.FC = () => {
                   <Route path="/projects/el-salvador" element={<ElSalvadorPage />} />
                   <Route path="/about" element={<AboutPage />} />
                   <Route path="/contact" element={<ContactPage />} />
+                  <Route path="/privacy" element={<PrivacyPage />} />
+                  <Route path="/terms" element={<TermsPage />} />
                 </Routes>
               </main>
               <Footer />

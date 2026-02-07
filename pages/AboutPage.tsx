@@ -160,7 +160,7 @@ export const AboutPage: React.FC = () => {
             name: "Michele DeRyan",
             role: "Business Development, LATAM",
             initials: "MD",
-            bio: "Seasoned entrepreneur and business development executive with a diverse international portfolio spanning North America, SE Asia, and Latin America. Michele specializes in navigating complex regulatory environments and fostering specialized government relations to drive sustainable growth. She excels in bridging cultural and commercial gaps, facilitating complex project implementation and aligning corporate objectives with public sector requirements within the dynamic LATAM region.",
+            bio: "Seasoned entrepreneur and business development executive with a diverse international portfolio spanning North America, SE Asia, and Latin America.",
             highlights: [
                 "Launched and scaled ventures across North America, SE Asia, and LATAM.",
                 "Specialist in government relations and regulatory compliance.",
@@ -198,7 +198,7 @@ export const AboutPage: React.FC = () => {
                         variants={sectionVariants}
                         className="text-2xl md:text-3xl text-white/90 font-medium leading-tight max-w-3xl mx-auto cursor-default tracking-tight"
                     >
-                        Pioneering global solutions in advanced resource recovery through strategic partnerships and innovative development frameworks.
+                        <span className="text-white/50">Pioneering global solutions in advanced resource recovery through strategic partnerships and innovative development frameworks.</span>
                     </motion.p>
                 </motion.div>
             </motion.section>

@@ -45,7 +45,7 @@ export function LocationTag({ city = "San Salvador", country = "El Salvador", ti
       </div>
 
       {/* Location text */}
-      <div className="flex items-center gap-2 overflow-hidden h-5 w-32 relative">
+      <div className="flex items-center gap-2 overflow-hidden h-5 w-40 relative">
         <span
           className="absolute left-0 text-xs font-medium text-white transition-all duration-500 whitespace-nowrap"
           style={{

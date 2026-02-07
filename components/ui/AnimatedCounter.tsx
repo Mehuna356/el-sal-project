@@ -24,7 +24,7 @@ export const AnimatedCounter: React.FC<AnimatedCounterProps> = ({
     damping: 60,
     stiffness: 100,
   });
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-20px" });
 
   useEffect(() => {
     if (isInView) {
@@ -36,7 +36,7 @@ export const AnimatedCounter: React.FC<AnimatedCounterProps> = ({
 
   useEffect(() => {
     const unsubscribe = springValue.on("change", (latest) => {
-        setDisplayValue(latest);
+      setDisplayValue(latest);
     });
     return () => unsubscribe();
   }, [springValue]);
