@@ -1,7 +1,7 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ShieldCheck, Scale, FileCheck, Lock, ScrollText } from 'lucide-react';
-import { SleekBadge } from './ui/SleekBadge';
+import { ShieldCheck, Scale, FileCheck, Lock, ScrollText, Check } from 'lucide-react';
 import { LightingBadge } from './ui/LightingBadge';
 
 export const GovernanceBento: React.FC = () => {
@@ -65,10 +65,12 @@ export const GovernanceBento: React.FC = () => {
                         </p>
                     </div>
 
-                    <div className="space-y-3">
+                    <div className="space-y-4">
                         {["Audited Ledgers", "Baseload Contracts", "CSR Standard"].map((tag, i) => (
-                            <div key={i} className="flex items-center gap-3 text-sm text-white/80 border-b border-white/5 pb-2 last:border-0">
-                                <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                            <div key={i} className="flex items-center gap-3 text-sm text-white/70 border-b border-white/5 pb-3 last:border-0 font-light">
+                                <div className="p-1 rounded-full bg-white/5 text-gray-400 border border-white/10">
+                                    <Check className="w-3 h-3" strokeWidth={3} />
+                                </div>
                                 {tag}
                             </div>
                         ))}

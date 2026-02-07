@@ -1,9 +1,9 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ElSalvadorMap } from '../components/ElSalvadorMap';
 import { Button } from '../components/ui/Button';
 import { RoadmapCard } from '../components/ui/RoadmapCard';
-import { HaloCard } from '../components/ui/HaloCard';
 import { StrategicValueCards } from '../components/StrategicValueCards';
 import { TokenWorkflow } from '../components/TokenWorkflow';
 import { GovernanceBento } from '../components/GovernanceBento';
@@ -165,7 +165,10 @@ export const ElSalvadorPage: React.FC = () => {
       {/* SECTION 4: DUAL TOKEN ECOSYSTEM */}
       <section className="px-6 mb-40 max-w-7xl mx-auto">
         <div className="mb-20 text-center max-w-3xl mx-auto">
-            <SleekBadge className="mb-6" color="blue">MIO3 Platform</SleekBadge>
+            {/* UPDATED BADGE COLOR */}
+            <div className="mb-6 inline-block">
+                <SleekBadge color="platinum">MIO3 Platform</SleekBadge>
+            </div>
             <h2 className="text-4xl md:text-5xl font-display font-bold tracking-tight text-white mb-6">Dual Token Ecosystem</h2>
             <p className="text-white/60 text-lg leading-relaxed font-light">
                 Two distinct asset classes managed on a unified platform: Capital Investment vs. Environmental Impact.
@@ -277,11 +280,11 @@ export const ElSalvadorPage: React.FC = () => {
           <TokenWorkflow />
       </section>
 
-      {/* SECTION 7: THE WASTE GAP & ADDITIONALITY (Redesigned) */}
+      {/* SECTION 7: THE WASTE GAP & ADDITIONALITY */}
       <section className="px-6 mb-40 max-w-7xl mx-auto">
         <div className="space-y-12">
             
-            {/* 1. Structural Waste Deficit - REDESIGNED (Emerald Theme & Sleek Bars) */}
+            {/* 1. Structural Waste Deficit */}
             <div className="relative w-full overflow-hidden rounded-[2.5rem] border border-white/10 bg-[#0a0a0a] shadow-2xl group hover:border-white/20 transition-all duration-500">
                 <DottedGlowBackground className="opacity-30" glowColor="rgba(16, 185, 129, 0.2)" />
                 
@@ -335,7 +338,7 @@ export const ElSalvadorPage: React.FC = () => {
                         </motion.div>
                     </div>
 
-                    {/* Right: Enhanced Visualization (Sleek Linear Style) */}
+                    {/* Right: Enhanced Visualization */}
                     <div className="lg:w-1/2 w-full">
                          <div className="relative bg-[#050505] rounded-[2rem] border border-white/10 p-8 md:p-12 shadow-2xl overflow-hidden">
                              <div className="flex flex-col gap-12">

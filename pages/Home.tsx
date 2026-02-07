@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Hero } from '../components/Hero';
 import { BentoFeatures } from '../components/BentoFeatures';
@@ -85,7 +86,8 @@ export const Home: React.FC = () => {
 
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
             <motion.div variants={fadeInUp}>
-                <h3 className="text-emerald-400 font-medium tracking-widest uppercase text-xs mb-6 pl-1">
+                {/* Updated styling: gray text, white border */}
+                <h3 className="border border-white/20 rounded-full px-4 py-1.5 text-white/50 font-medium tracking-widest uppercase text-xs mb-8 w-fit">
                   Global Carbon Deficit
                 </h3>
                 <h2 className="text-4xl md:text-6xl font-display font-semibold tracking-tighter text-white mb-8 leading-[1.1]">

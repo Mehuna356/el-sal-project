@@ -1,3 +1,4 @@
+
 import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Search, Factory, ShieldCheck, Coins, Globe, ArrowRight } from 'lucide-react';
@@ -88,18 +89,18 @@ export const TokenWorkflow: React.FC = () => {
                         transition={{ delay: idx * 0.1, duration: 0.5 }}
                         className="snap-center shrink-0 w-[340px] md:w-[380px] h-[480px] bg-white/[0.02] backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-8 relative overflow-hidden group hover:border-emerald-500/20 hover:bg-white/[0.04] transition-all duration-500 flex flex-col justify-between"
                     >
-                        {/* Dynamic Gradient Glow */}
-                        <div className={`absolute -inset-[100px] bg-gradient-to-r from-${step.color}-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-3xl`} />
+                        {/* Dynamic Gradient Glow - Reduced intensity */}
+                        <div className={`absolute -inset-[100px] opacity-0 group-hover:opacity-30 transition-opacity duration-700 blur-3xl bg-gradient-to-r ${step.color === 'emerald' ? 'from-emerald-500/10' : step.color === 'blue' ? 'from-blue-500/10' : step.color === 'purple' ? 'from-purple-500/10' : step.color === 'amber' ? 'from-amber-500/10' : 'from-cyan-500/10'} via-transparent to-transparent`} />
                         
-                        {/* Large Sleek Numbering */}
-                        <div className="absolute -right-8 -bottom-16 text-[200px] font-display font-bold text-white/[0.02] group-hover:text-white/[0.05] transition-all duration-700 leading-none select-none z-0 pointer-events-none">
+                        {/* Huge Sleek Numbering - Modified Position & Opacity */}
+                        <div className="absolute -left-10 -top-12 text-[280px] font-display font-bold text-white/[0.04] group-hover:text-white/[0.08] transition-all duration-700 leading-none select-none z-0 pointer-events-none tracking-tighter">
                             {step.id}
                         </div>
 
-                        <div className="relative z-10">
+                        <div className="relative z-10 pt-20">
                             {/* Header */}
                             <div className="flex justify-between items-start mb-10">
-                                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br from-white/10 to-transparent border border-white/10 flex items-center justify-center group-hover:scale-105 transition-transform duration-500 shadow-2xl backdrop-blur-md text-${step.color === 'emerald' ? 'emerald-400' : 'white'}`}>
+                                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br from-white/10 to-transparent border border-white/10 flex items-center justify-center group-hover:scale-105 transition-transform duration-500 shadow-2xl backdrop-blur-md text-white group-hover:${step.color === 'emerald' ? 'text-emerald-400' : step.color === 'blue' ? 'text-blue-400' : step.color === 'purple' ? 'text-purple-400' : step.color === 'amber' ? 'text-amber-400' : 'text-cyan-400'}`}>
                                     <step.icon className="w-7 h-7 drop-shadow-lg" strokeWidth={1.5} />
                                 </div>
                                 <div className="px-3 py-1.5 rounded-full border border-white/10 bg-black/20 text-[10px] font-bold uppercase tracking-[0.2em] text-white/40 backdrop-blur-md">
@@ -109,7 +110,7 @@ export const TokenWorkflow: React.FC = () => {
 
                             {/* Title */}
                             <div className="mb-4">
-                                <span className={`text-xs font-bold text-${step.color}-400 uppercase tracking-widest mb-2 block`}>{step.subtitle}</span>
+                                <span className={`text-xs font-bold uppercase tracking-widest mb-2 block ${step.color === 'emerald' ? 'text-emerald-400' : step.color === 'blue' ? 'text-blue-400' : step.color === 'purple' ? 'text-purple-400' : step.color === 'amber' ? 'text-amber-400' : 'text-cyan-400'}`}>{step.subtitle}</span>
                                 <h3 className="text-3xl font-display font-bold text-white leading-tight">{step.title}</h3>
                             </div>
                         </div>

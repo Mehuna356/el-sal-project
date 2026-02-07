@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 
@@ -9,9 +10,9 @@ export const ElSalvadorMap: React.FC = () => {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-emerald-500/5 blur-[100px] rounded-full" />
 
       <motion.div
-        initial={{ rotateX: 20, rotateY: -10, scale: 0.9, opacity: 0 }}
-        animate={{ rotateX: 25, rotateY: 10, scale: 1, opacity: 1 }}
-        transition={{ duration: 2, ease: "easeOut" }}
+        initial={{ rotateX: 10, rotateY: 0, scale: 0.8, opacity: 0 }}
+        animate={{ rotateX: 15, rotateY: 0, scale: 1, opacity: 1 }}
+        transition={{ duration: 1.5, ease: "easeOut" }}
         className="relative z-10 w-full h-full flex items-center justify-center"
       >
         <svg
@@ -39,7 +40,7 @@ export const ElSalvadorMap: React.FC = () => {
                 </filter>
             </defs>
 
-            {/* El Salvador Outline - Dotted Fill */}
+            {/* El Salvador Outline - Dotted Fill - Refined Shape */}
             <g transform="translate(10, 10) scale(0.9)">
                 <path
                     d="M 20,50 L 40,48 L 50,45 L 70,42 L 90,40 L 110,41 L 120,42 L 140,41 L 150,40 L 170,45 L 180,55 L 185,60 L 175,65 L 160,65 L 150,62 L 140,60 L 130,62 L 120,65 L 110,63 L 100,60 L 85,62 L 70,65 L 60,63 L 50,60 L 40,58 L 30,55 Z"

@@ -1,7 +1,42 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+
+import React, { useEffect, useState } from 'react';
+import { motion, useInView } from 'framer-motion';
 import { AlertTriangle, Ban, Flame, Recycle, Zap } from 'lucide-react';
 import { FeatureCard } from './ui/FeatureCard';
+
+// Spinning Zero Component
+const SpinningZero = () => {
+    const [display, setDisplay] = useState("100%");
+    const ref = React.useRef(null);
+    const isInView = useInView(ref, { once: true });
+
+    useEffect(() => {
+        if (!isInView) return;
+
+        let frames = 0;
+        const maxFrames = 25; // Duration
+        
+        const interval = setInterval(() => {
+            frames++;
+            // Show random percentage briefly
+            const random = Math.floor(Math.random() * 100);
+            setDisplay(`${random}%`);
+
+            if (frames > maxFrames) {
+                clearInterval(interval);
+                setDisplay("0%");
+            }
+        }, 40); // Speed
+
+        return () => clearInterval(interval);
+    }, [isInView]);
+
+    return (
+        <div ref={ref} className="text-[180px] md:text-[250px] font-display font-bold leading-none text-transparent bg-clip-text bg-gradient-to-b from-emerald-500/20 to-transparent select-none tracking-tighter mix-blend-overlay">
+            {display}
+        </div>
+    );
+}
 
 export const FeaturedSection: React.FC = () => {
     
@@ -86,15 +121,14 @@ export const FeaturedSection: React.FC = () => {
                          <div className="absolute inset-0 bg-emerald-900/10 opacity-30 group-hover:opacity-50 transition-opacity duration-1000" />
                          
                          <div className="relative z-10 text-center w-full h-full flex items-center justify-center">
-                            {/* Giant 0% - Abstract & Clean */}
+                            {/* Giant Spinning 0% */}
                             <div className="relative">
-                                <div className="text-[180px] md:text-[250px] font-display font-bold leading-none text-transparent bg-clip-text bg-gradient-to-b from-emerald-500/20 to-transparent select-none tracking-tighter mix-blend-overlay">
-                                    0%
-                                </div>
-                                <div className="absolute inset-0 flex items-center justify-center">
+                                <SpinningZero />
+                                
+                                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                                     <div className="w-full h-[1px] bg-emerald-500/30 absolute top-1/2 left-0 rotate-[-15deg] shadow-[0_0_20px_rgba(16,185,129,0.5)]" />
                                 </div>
-                                <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-sm font-bold uppercase tracking-[0.3em] text-emerald-500/40 whitespace-nowrap">
+                                <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-sm font-bold uppercase tracking-[0.3em] text-gray-400 whitespace-nowrap">
                                     Current Reserves
                                 </div>
                             </div>
