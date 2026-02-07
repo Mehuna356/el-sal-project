@@ -31,18 +31,18 @@ export const Card: React.FC<CardProps> = ({ children, className = '', noHover = 
   };
 
   return (
-    <motion.div 
+    <motion.div
       ref={divRef}
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       whileHover={noHover ? {} : { y: -5, boxShadow: "0 20px 40px -20px rgba(16,185,129,0.15)" }}
       transition={{ duration: 0.3, ease: "easeOut" }}
-      className={`relative overflow-hidden bg-[#080808] border border-white/5 rounded-2xl transition-colors duration-500 group ${className}`}
+      className={`relative overflow-hidden bg-[#080808] border border-white/8 rounded-2xl transition-colors duration-500 group ${className}`}
     >
       {/* Top Highlight Line */}
       <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-50" />
-      
+
       {/* Spotlight Effect */}
       {spotlight && (
         <div
@@ -53,7 +53,7 @@ export const Card: React.FC<CardProps> = ({ children, className = '', noHover = 
           }}
         />
       )}
-      
+
       {/* Content */}
       <div className="relative z-20 h-full">
         {children}

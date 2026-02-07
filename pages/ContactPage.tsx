@@ -22,11 +22,11 @@ export const ContactPage: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setFormState('submitting');
-    
+
     try {
       const response = await fetch("https://formsubmit.co/ajax/fashoid.official@gmail.com", {
         method: "POST",
-        headers: { 
+        headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
@@ -91,7 +91,7 @@ export const ContactPage: React.FC = () => {
           font-size: 14px;
         }
         .inputField::placeholder {
-          color: rgba(255, 255, 255, 0.25);
+          color: rgba(255, 255, 255, 0.45);
         }
 
         /* Loader Animation */
@@ -131,49 +131,49 @@ export const ContactPage: React.FC = () => {
       {/* Enhanced Background */}
       <div className="fixed inset-0 z-0 bg-[#020402]">
         <div className="absolute inset-0 bg-cyber-grid opacity-50 animate-[pulse_10s_ease-in-out_infinite]" />
-        
+
         {/* Subtle moving orb */}
-        <motion.div 
-            className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-emerald-500/5 blur-[120px] rounded-full pointer-events-none"
-            animate={{ 
-                x: [0, 100, 0],
-                y: [0, -50, 0],
-            }}
-            transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+        <motion.div
+          className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-emerald-500/5 blur-[120px] rounded-full pointer-events-none"
+          animate={{
+            x: [0, 100, 0],
+            y: [0, -50, 0],
+          }}
+          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
         />
-        <motion.div 
-            className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-blue-500/5 blur-[100px] rounded-full pointer-events-none"
-            animate={{ 
-                x: [0, -100, 0],
-                y: [0, 50, 0],
-            }}
-            transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+        <motion.div
+          className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-blue-500/5 blur-[100px] rounded-full pointer-events-none"
+          animate={{
+            x: [0, -100, 0],
+            y: [0, 50, 0],
+          }}
+          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
         />
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 py-12 md:py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          
+
           {/* LEFT COLUMN: INFO */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="lg:pr-10"
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 mb-6 backdrop-blur-sm">
-                <span className="relative flex h-2 w-2">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                </span>
-                <span className="text-[10px] font-semibold text-emerald-400 uppercase tracking-wider">Open for Partnerships</span>
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              </span>
+              <span className="text-[10px] font-semibold text-emerald-400 uppercase tracking-wider">Open for Partnerships</span>
             </div>
 
             <h1 className="text-5xl md:text-7xl font-display font-bold tracking-tight text-white mb-6 leading-[0.95]">
-              Connect <br/>
+              Connect <br />
               <span className="text-white/40">with us.</span>
             </h1>
-            
+
             <p className="text-lg text-white/60 font-light leading-relaxed mb-10 max-w-md">
               Ready to explore partnerships or learn more about our global development capabilities?
             </p>
@@ -185,8 +185,8 @@ export const ContactPage: React.FC = () => {
                   <MapPin className="text-white/70 group-hover:text-emerald-400 w-5 h-5 transition-colors" />
                 </div>
                 <div>
-                    <h3 className="text-sm font-bold text-white mb-1">Headquarters</h3>
-                    <p className="text-sm text-white/50 group-hover:text-white/70 transition-colors">San Salvador, El Salvador</p>
+                  <h3 className="text-sm font-bold text-white mb-1">Headquarters</h3>
+                  <p className="text-sm text-white/50 group-hover:text-white/70 transition-colors">San Salvador, El Salvador</p>
                 </div>
               </div>
 
@@ -196,8 +196,8 @@ export const ContactPage: React.FC = () => {
                   <Mail className="text-white/70 group-hover:text-emerald-400 w-5 h-5 transition-colors" />
                 </div>
                 <div>
-                    <h3 className="text-sm font-bold text-white mb-1">Email</h3>
-                    <p className="text-sm text-white/50 group-hover:text-emerald-400 transition-colors">timgoltz@endpoint-group.com</p>
+                  <h3 className="text-sm font-bold text-white mb-1">Email</h3>
+                  <p className="text-sm text-white/50 group-hover:text-emerald-400 transition-colors">timgoltz@endpoint-group.com</p>
                 </div>
               </a>
 
@@ -228,114 +228,114 @@ export const ContactPage: React.FC = () => {
           >
             {/* Form Card Container with Halo Effect */}
             <div className="relative group">
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-500/30 to-blue-500/30 rounded-[24px] blur opacity-30 group-hover:opacity-60 transition duration-1000 group-hover:duration-200"></div>
-                
-                <div className="relative bg-[#080808] border border-white/10 rounded-[22px] p-6 md:p-8 shadow-2xl">
-                    <div className="mb-6">
-                        <h3 className="text-lg font-bold text-white mb-1">Send a Message</h3>
-                        <p className="text-white/40 text-xs">We typically respond within 24 hours.</p>
-                    </div>
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-500/30 to-blue-500/30 rounded-[24px] blur opacity-30 group-hover:opacity-60 transition duration-1000 group-hover:duration-200"></div>
 
-                    <form onSubmit={handleSubmit} className="space-y-4">
-                        
-                        <div className="grid grid-cols-2 gap-4">
-                            <div className="space-y-1.5">
-                                <label className="text-[10px] font-bold text-white/50 uppercase tracking-wider ml-1">First Name</label>
-                                <div className="messageBox">
-                                    <input 
-                                      type="text" 
-                                      name="firstName" 
-                                      value={formData.firstName}
-                                      onChange={handleChange}
-                                      placeholder="John" 
-                                      required 
-                                      className="inputField" 
-                                    />
-                                </div>
-                            </div>
-                            <div className="space-y-1.5">
-                                <label className="text-[10px] font-bold text-white/50 uppercase tracking-wider ml-1">Last Name</label>
-                                <div className="messageBox">
-                                    <input 
-                                      type="text" 
-                                      name="lastName" 
-                                      value={formData.lastName}
-                                      onChange={handleChange}
-                                      placeholder="Doe" 
-                                      required 
-                                      className="inputField" 
-                                    />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="space-y-1.5">
-                            <label className="text-[10px] font-bold text-white/50 uppercase tracking-wider ml-1">Email</label>
-                            <div className="messageBox">
-                                <input 
-                                  type="email" 
-                                  name="email"
-                                  value={formData.email}
-                                  onChange={handleChange}
-                                  placeholder="john@company.com" 
-                                  required 
-                                  className="inputField" 
-                                />
-                            </div>
-                        </div>
-
-                        <div className="space-y-1.5">
-                            <label className="text-[10px] font-bold text-white/50 uppercase tracking-wider ml-1">Topic</label>
-                            <div className="messageBox relative">
-                                <select 
-                                  name="topic"
-                                  value={formData.topic}
-                                  onChange={handleChange}
-                                  className="inputField appearance-none cursor-pointer bg-transparent"
-                                  required
-                                >
-                                    <option value="" disabled className="text-gray-500 bg-[#0A0A0A]">Select an option</option>
-                                    <option value="industrial" className="bg-[#0A0A0A] text-white">Industrial Deployment</option>
-                                    <option value="invest" className="bg-[#0A0A0A] text-white">Investment & Tokenization</option>
-                                    <option value="general" className="bg-[#0A0A0A] text-white">General Inquiry</option>
-                                </select>
-                                <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-white/30">
-                                    <ArrowRight className="rotate-90 w-3 h-3" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="space-y-1.5">
-                            <label className="text-[10px] font-bold text-white/50 uppercase tracking-wider ml-1">Message</label>
-                            <div className="messageBox !h-auto py-3">
-                                <textarea 
-                                    name="message"
-                                    value={formData.message}
-                                    onChange={handleChange}
-                                    placeholder="How can we help?" 
-                                    rows={3}
-                                    className="inputField resize-none"
-                                    required
-                                />
-                            </div>
-                        </div>
-
-                        {/* Submit Button */}
-                        <div className="pt-2">
-                            <button
-                                type="submit"
-                                disabled={formState !== 'idle'}
-                                className="w-full relative group overflow-hidden rounded-xl bg-white text-black font-bold text-sm py-4 transition-transform active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed"
-                            >
-                                <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                                <span className="relative z-10 flex items-center justify-center gap-2">
-                                    {formState === 'submitting' ? 'Sending...' : 'Send Message'} <ArrowRight className="w-4 h-4" />
-                                </span>
-                            </button>
-                        </div>
-
-                    </form>
+              <div className="relative bg-[#080808] border border-white/10 rounded-[22px] p-6 md:p-8 shadow-2xl">
+                <div className="mb-6">
+                  <h3 className="text-lg font-bold text-white mb-1">Send a Message</h3>
+                  <p className="text-white/40 text-xs">We typically respond within 24 hours.</p>
                 </div>
+
+                <form onSubmit={handleSubmit} className="space-y-4">
+
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="space-y-1.5">
+                      <label className="text-[10px] font-bold text-white/50 uppercase tracking-wider ml-1">First Name</label>
+                      <div className="messageBox">
+                        <input
+                          type="text"
+                          name="firstName"
+                          value={formData.firstName}
+                          onChange={handleChange}
+                          placeholder="John"
+                          required
+                          className="inputField"
+                        />
+                      </div>
+                    </div>
+                    <div className="space-y-1.5">
+                      <label className="text-[10px] font-bold text-white/50 uppercase tracking-wider ml-1">Last Name</label>
+                      <div className="messageBox">
+                        <input
+                          type="text"
+                          name="lastName"
+                          value={formData.lastName}
+                          onChange={handleChange}
+                          placeholder="Doe"
+                          required
+                          className="inputField"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="space-y-1.5">
+                    <label className="text-[10px] font-bold text-white/50 uppercase tracking-wider ml-1">Email</label>
+                    <div className="messageBox">
+                      <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        placeholder="john@company.com"
+                        required
+                        className="inputField"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="space-y-1.5">
+                    <label className="text-[10px] font-bold text-white/50 uppercase tracking-wider ml-1">Topic</label>
+                    <div className="messageBox relative">
+                      <select
+                        name="topic"
+                        value={formData.topic}
+                        onChange={handleChange}
+                        className="inputField appearance-none cursor-pointer bg-transparent"
+                        required
+                      >
+                        <option value="" disabled className="text-gray-500 bg-[#0A0A0A]">Select an option</option>
+                        <option value="industrial" className="bg-[#0A0A0A] text-white">Industrial Deployment</option>
+                        <option value="invest" className="bg-[#0A0A0A] text-white">Investment & Tokenization</option>
+                        <option value="general" className="bg-[#0A0A0A] text-white">General Inquiry</option>
+                      </select>
+                      <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-white/30">
+                        <ArrowRight className="rotate-90 w-3 h-3" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="space-y-1.5">
+                    <label className="text-[10px] font-bold text-white/50 uppercase tracking-wider ml-1">Message</label>
+                    <div className="messageBox !h-auto py-3">
+                      <textarea
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        placeholder="How can we help?"
+                        rows={3}
+                        className="inputField resize-none"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  {/* Submit Button */}
+                  <div className="pt-2">
+                    <button
+                      type="submit"
+                      disabled={formState !== 'idle'}
+                      className="w-full relative group overflow-hidden rounded-xl bg-white text-black font-bold text-sm py-4 transition-transform active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed"
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      <span className="relative z-10 flex items-center justify-center gap-2">
+                        {formState === 'submitting' ? 'Sending...' : 'Send Message'} <ArrowRight className="w-4 h-4" />
+                      </span>
+                    </button>
+                  </div>
+
+                </form>
+              </div>
             </div>
           </motion.div>
 
@@ -368,26 +368,26 @@ export const ContactPage: React.FC = () => {
                 </div>
               ) : (
                 <div className="flex flex-col items-center gap-4">
-                   <motion.div 
+                  <motion.div
                     initial={{ scale: 0, rotate: -45 }}
                     animate={{ scale: 1, rotate: 0 }}
                     transition={{ type: "spring" }}
                     className="w-12 h-12 rounded-full bg-emerald-500/10 flex items-center justify-center border border-emerald-500/50 mb-2"
-                   >
-                     <CheckCircle2 className="w-6 h-6 text-emerald-400" />
-                   </motion.div>
-                   
-                   <div>
-                     <h3 className="text-lg font-bold text-white mb-1">Message Sent</h3>
-                     <p className="text-white/50 text-sm">We'll get back to you shortly.</p>
-                   </div>
+                  >
+                    <CheckCircle2 className="w-6 h-6 text-emerald-400" />
+                  </motion.div>
 
-                   <button 
+                  <div>
+                    <h3 className="text-lg font-bold text-white mb-1">Message Sent</h3>
+                    <p className="text-white/50 text-sm">We'll get back to you shortly.</p>
+                  </div>
+
+                  <button
                     onClick={() => setFormState('idle')}
                     className="mt-2 text-xs text-white hover:text-emerald-400 font-bold uppercase tracking-widest border-b border-transparent hover:border-emerald-400/50 pb-0.5 transition-all"
-                   >
-                     Close
-                   </button>
+                  >
+                    Close
+                  </button>
                 </div>
               )}
             </motion.div>
