@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Card } from '../components/ui/Card';
-import { Atom, Factory, Zap, CheckCircle2, Ruler, ShieldCheck, Lock } from 'lucide-react';
+import { Atom, Factory, Zap, CheckCircle2, Ruler, ShieldCheck, Lock, FileText, ArrowRight } from 'lucide-react';
 import { ProcessSchematic } from '../components/ProcessSchematic';
+import { PdfModal } from '../components/ui/PdfModal';
+import { useNavigate } from 'react-router-dom';
 
 // --- NEW SUB-COMPONENTS FOR BENTO ICONS ---
 
@@ -93,12 +95,14 @@ const processSteps = [
     {
         icon: Zap,
         title: "High-Value Output",
-        desc: "Generates premium Euro-5 standard diesel, high-grade carbon black, and syngas used to power the facility itself.",
+        desc: "Generates premium ultra low sulfur fuel, high-grade carbon blacks, and syngas used to power the facility itself.",
         color: "from-teal-400 to-emerald-400"
     }
 ];
 
 export const TechnologyPage: React.FC = () => {
+    const [isPdfOpen, setIsPdfOpen] = useState(false);
+    const navigate = useNavigate();
     return (
         <div className="min-h-screen bg-black text-white selection:bg-emerald-500/30">
 
@@ -147,8 +151,14 @@ export const TechnologyPage: React.FC = () => {
                     <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-6 px-4">
                         <div>
                             <h2 className="text-2xl font-semibold tracking-tight text-white mb-2">Process Architecture</h2>
-                            <p className="text-white/50 text-base max-w-md">Real-time flow from mixed inputs to value-add outputs.</p>
+                            <p className="text-white/50 text-base max-w-md">Real-time flow from mixed inputs to value-add outputs, depending upon feedstock.</p>
                         </div>
+                        <button
+                            onClick={() => navigate('/projects/el-salvador')}
+                            className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium text-emerald-400 border border-emerald-400/30 rounded-xl hover:bg-emerald-400/10 transition-all duration-300 whitespace-nowrap"
+                        >
+                            See ESPP Process Architecture <ArrowRight className="w-4 h-4" />
+                        </button>
                     </div>
 
                     <motion.div
@@ -228,17 +238,17 @@ export const TechnologyPage: React.FC = () => {
                                 <RichGlassIcon type="shield" color="blue" />
                             </div>
                             <div>
-                                <h3 className="text-xl font-semibold text-white tracking-tight mb-4">Euro-5 Diesel</h3>
-                                <div className="space-y-3">
-                                    <div className="flex justify-between text-sm border-b border-white/5 pb-2">
-                                        <span className="text-white/40">Sulfur</span>
-                                        <span className="text-white font-mono">&lt; 10ppm</span>
-                                    </div>
-                                    <div className="flex justify-between text-sm border-b border-white/5 pb-2">
-                                        <span className="text-white/40">Cetane</span>
-                                        <span className="text-white font-mono">&gt; 51</span>
-                                    </div>
-                                </div>
+                                <h3 className="text-xl font-semibold text-white tracking-tight mb-4">100% Renewable Fuel</h3>
+                                <p className="text-white/50 text-sm leading-relaxed mb-6">
+                                    Ultra low sulfur fuel meeting international standards for renewable energy classification.
+                                </p>
+                                <button
+                                    onClick={() => setIsPdfOpen(true)}
+                                    className="inline-flex items-center gap-2 text-sm font-medium text-emerald-400 border border-emerald-400/30 px-4 py-2 rounded-xl hover:bg-emerald-400/10 transition-all duration-300"
+                                >
+                                    <FileText className="w-4 h-4" />
+                                    Access US DOE Document on Renewable Fuel
+                                </button>
                             </div>
                         </div>
 
@@ -248,13 +258,10 @@ export const TechnologyPage: React.FC = () => {
                                 <div className="px-3 py-1 rounded-full bg-white/10 border border-white/20 text-white text-xs font-bold uppercase tracking-wider">Audit</div>
                                 <RichGlassIcon type="doc" color="emerald" />
                             </div>
-                            <h3 className="text-xl font-semibold text-white tracking-tight mb-2">Stantec Validated</h3>
+                            <h3 className="text-xl font-semibold text-white tracking-tight mb-2">3rd Party Engineer Validated</h3>
                             <p className="text-white/60 text-sm mb-6 leading-relaxed">
                                 Independent engineering review confirms mass balance efficiency and output quality specifications.
                             </p>
-                            <button className="text-sm font-semibold text-white border-b border-white/30 pb-0.5 hover:border-white transition-colors">
-                                Read Engineering Report
-                            </button>
                         </div>
 
                         {/* 4. SAFETY & COMPLIANCE - Wide */}
@@ -269,8 +276,8 @@ export const TechnologyPage: React.FC = () => {
                                         Operates under strict North American and EU safety directives. Automated shutdown protocols and continuous emissions monitoring.
                                     </p>
                                     <div className="flex flex-wrap gap-3">
-                                        {["ISO 9001", "CE Marked", "ASME", "ATEX"].map((tag, i) => (
-                                            <span key={i} className="px-3 py-1 bg-white/5 rounded-lg text-xs font-semibold text-white/80 border border-white/5">{tag}</span>
+                                        {["100% Remote Monitoring Capability"].map((tag, i) => (
+                                            <span key={i} className="px-4 py-2 bg-emerald-500/10 rounded-lg text-sm font-semibold text-emerald-400 border border-emerald-500/20">{tag}</span>
                                         ))}
                                     </div>
                                 </div>
@@ -287,6 +294,13 @@ export const TechnologyPage: React.FC = () => {
                     </div>
                 </div>
             </section>
+
+            <PdfModal
+                isOpen={isPdfOpen}
+                onClose={() => setIsPdfOpen(false)}
+                pdfUrl="/pdfs/us-doe-renewable-fuel.pdf"
+                title="US DOE — Renewable Fuel Classification"
+            />
         </div>
     );
 };

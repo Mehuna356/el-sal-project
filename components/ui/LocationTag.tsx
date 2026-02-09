@@ -6,7 +6,7 @@ interface LocationTagProps {
   timezone?: string
 }
 
-export function LocationTag({ city = "San Salvador", country = "El Salvador", timezone = "CST" }: LocationTagProps) {
+export function LocationTag({ city = "", country = "El Salvador", timezone = "CST" }: LocationTagProps) {
   const [isHovered, setIsHovered] = useState(false)
   const [currentTime, setCurrentTime] = useState("")
 
@@ -53,7 +53,7 @@ export function LocationTag({ city = "San Salvador", country = "El Salvador", ti
             opacity: isHovered ? 0 : 1,
           }}
         >
-          {city}, {country}
+          {country}
         </span>
 
         <span

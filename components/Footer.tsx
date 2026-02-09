@@ -9,7 +9,7 @@ const data = {
   },
   contact: {
     email: 'timgoltz@endpoint-group.com',
-    address: 'San Salvador, El Salvador',
+    address: 'El Salvador',
   }
 };
 

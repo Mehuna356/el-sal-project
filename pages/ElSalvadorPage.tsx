@@ -101,7 +101,7 @@ export const ElSalvadorPage: React.FC = () => {
                             <div>
                                 <div className="text-xs text-white/40 uppercase font-bold tracking-widest mb-1">Monthly Output</div>
                                 <div className="text-3xl font-bold text-emerald-400 font-display flex items-baseline">
-                                    ~<AnimatedCounter value={900} /> <span className="text-sm text-emerald-400/50 ml-1 font-medium">k Liters</span>
+                                    <span className="text-lg text-emerald-400/70 mr-1">~</span>750-900<span className="text-sm text-emerald-400/50 ml-1 font-medium">k Liters</span>
                                 </div>
                             </div>
                         </div>
@@ -146,13 +146,17 @@ export const ElSalvadorPage: React.FC = () => {
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
                         {[
                             { label: "Market CAGR", val: 121, suffix: "%", sub: "2025-2033 (Plastic Credits)" },
-                            { label: "Annual Output", val: 9.3, suffix: "M", sub: "Liters of Diesel" },
-                            { label: "Waste Gap", val: 1.2, suffix: "k", sub: "Tonnes/Day Uncollected" },
-                            { label: "Energy", val: 100, suffix: "GWh", sub: "Equivalent/Year" },
+                            { label: "Est. Annual Output", val: "7-9", suffix: "M", sub: "Est. Liters of Diesel", isRange: true },
+                            { label: "Plastic Waste Gap", val: "400-500", suffix: "", sub: "Tonnes/Day Unprocessed est.", isRange: true },
+                            { label: "Energy", val: 100, suffix: "GWh", sub: "Est. Equivalent/Year" },
                         ].map((stat, i) => (
                             <div key={i} className="text-center group cursor-default">
                                 <div className="text-5xl font-display font-bold text-transparent bg-clip-text bg-gradient-to-b from-white to-white/60 mb-3 group-hover:from-emerald-300 group-hover:to-emerald-600 transition-all duration-500 tracking-tight">
-                                    <AnimatedCounter value={stat.val} suffix={stat.suffix} decimalPlaces={stat.val % 1 !== 0 ? 1 : 0} />
+                                    {stat.isRange ? (
+                                        <span>{stat.val}<span className="text-3xl">{stat.suffix}</span></span>
+                                    ) : (
+                                        <AnimatedCounter value={stat.val} suffix={stat.suffix} decimalPlaces={typeof stat.val === 'number' && stat.val % 1 !== 0 ? 1 : 0} />
+                                    )}
                                 </div>
                                 <div className="text-sm font-bold text-white mb-1 tracking-wide">{stat.label}</div>
                                 <div className="text-xs text-white/40 font-medium uppercase tracking-wider">{stat.sub}</div>
@@ -169,7 +173,7 @@ export const ElSalvadorPage: React.FC = () => {
                     <div className="mb-6 inline-block">
                         <SleekBadge color="platinum">MIO3 Platform</SleekBadge>
                     </div>
-                    <h2 className="text-4xl md:text-5xl font-display font-bold tracking-tight text-white mb-6">Dual Token Ecosystem</h2>
+                    <h2 className="text-4xl md:text-5xl font-display font-bold tracking-tight text-white mb-6">Token Ecosystem</h2>
                     <p className="text-white/60 text-lg leading-relaxed font-light">
                         Two distinct asset classes managed on a unified platform: Capital Investment vs. Environmental Impact.
                     </p>
@@ -206,11 +210,11 @@ export const ElSalvadorPage: React.FC = () => {
                             <div className="flex items-center justify-between pt-8 border-t border-white/5">
                                 <div className="flex flex-col">
                                     <span className="text-[10px] uppercase font-bold text-white/40 tracking-wider mb-1">Instrument</span>
-                                    <span className="text-white font-mono">Tokenized Equity</span>
+                                    <span className="text-white font-mono">Tokenized Revenue Share</span>
                                 </div>
                                 <div className="flex flex-col text-right">
                                     <span className="text-[10px] uppercase font-bold text-white/40 tracking-wider mb-1">Audit</span>
-                                    <span className="text-emerald-400 font-mono">E&Y Validated</span>
+                                    <span className="text-emerald-400 font-mono">Third Party Validated</span>
                                 </div>
                             </div>
                         </div>
@@ -251,7 +255,7 @@ export const ElSalvadorPage: React.FC = () => {
                                 </div>
                                 <div className="flex flex-col text-right">
                                     <span className="text-[10px] uppercase font-bold text-white/40 tracking-wider mb-1">Standard</span>
-                                    <span className="text-blue-400 font-mono">Corsair Model</span>
+                                    <span className="text-blue-400 font-mono">Proprietary Model</span>
                                 </div>
                             </div>
                         </div>
@@ -321,9 +325,9 @@ export const ElSalvadorPage: React.FC = () => {
                                     transition={{ delay: 0.2 }}
                                     className="text-white/70 text-lg md:text-xl font-light leading-relaxed mb-8 max-w-lg"
                                 >
-                                    El Salvador generates <span className="text-white font-medium">4,200 tonnes</span> of waste daily, yet municipal infrastructure only captures <span className="text-white/60 font-medium">3,000 tonnes</span>.
+                                    El Salvador generates an estimated <span className="text-white font-medium">400–500 tonnes</span> of non-recyclable plastic waste daily, yet the municipal infrastructure has <span className="text-white/60 font-medium">zero plastic-to-fuel capacity</span>.
                                     <br /><br />
-                                    The remaining <span className="text-emerald-400 font-medium border-b border-emerald-500/30">1,200 tonnes</span> represent immediate feedstock opportunity.
+                                    This <span className="text-emerald-400 font-medium border-b border-emerald-500/30">~400–500 tonnes of daily plastic</span> represents immediate feedstock opportunity for sovereign fuel production.
                                 </motion.p>
 
                                 <motion.div
@@ -345,9 +349,9 @@ export const ElSalvadorPage: React.FC = () => {
                                         {/* Data Point 1 */}
                                         <div className="group/bar">
                                             <div className="flex justify-between items-end mb-4">
-                                                <span className="text-sm font-medium text-white/60">Total Daily Generation</span>
+                                                <span className="text-sm font-medium text-white/60">Daily Plastic Generation (Est.)</span>
                                                 <div className="text-right">
-                                                    <span className="text-2xl font-mono font-medium text-white tracking-tight">4,200</span>
+                                                    <span className="text-2xl font-mono font-medium text-white tracking-tight">400–500</span>
                                                     <span className="text-xs text-white/40 ml-2 font-mono uppercase">Tonnes</span>
                                                 </div>
                                             </div>
@@ -364,44 +368,44 @@ export const ElSalvadorPage: React.FC = () => {
                                         {/* Data Point 2 - Split Bar */}
                                         <div>
                                             <div className="flex justify-between items-end mb-4">
-                                                <span className="text-sm font-medium text-white/60">Capture vs. Deficit</span>
+                                                <span className="text-sm font-medium text-white/60">Processing Capacity vs. Gap</span>
                                                 <div className="text-right">
-                                                    <span className="text-2xl font-mono font-medium text-emerald-400 tracking-tight">1,200</span>
-                                                    <span className="text-xs text-emerald-500/50 ml-2 font-mono uppercase">Uncollected</span>
+                                                    <span className="text-2xl font-mono font-medium text-emerald-400 tracking-tight">400–500</span>
+                                                    <span className="text-xs text-emerald-500/50 ml-2 font-mono uppercase">Unprocessed est.</span>
                                                 </div>
                                             </div>
 
                                             <div className="flex gap-2 h-2 w-full">
-                                                {/* Captured (Gray) */}
+                                                {/* Zero Processing (Gray) */}
                                                 <motion.div
                                                     initial={{ width: 0 }}
-                                                    whileInView={{ width: "71%" }}
+                                                    whileInView={{ width: "5%" }}
                                                     transition={{ duration: 1, ease: "easeOut" }}
                                                     className="h-full bg-white/20 rounded-l-full"
                                                 />
                                                 {/* Deficit (Emerald) */}
                                                 <motion.div
                                                     initial={{ width: 0 }}
-                                                    whileInView={{ width: "29%" }}
+                                                    whileInView={{ width: "95%" }}
                                                     transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
                                                     className="h-full bg-emerald-500 rounded-r-full shadow-[0_0_15px_rgba(16,185,129,0.5)]"
                                                 />
                                             </div>
                                             <div className="flex justify-between mt-3 text-xs font-mono text-white/30">
-                                                <span>3,000t Captured</span>
-                                                <span className="text-emerald-500/70">1,200t Opportunity</span>
+                                                <span>~0t Processed</span>
+                                                <span className="text-emerald-500/70">400–500t Opportunity</span>
                                             </div>
                                         </div>
 
                                         {/* Stats Grid */}
                                         <div className="grid grid-cols-2 gap-px bg-white/10 rounded-xl overflow-hidden border border-white/10 mt-4">
                                             <div className="bg-[#0A0A0A] p-4 flex flex-col gap-1">
-                                                <span className="text-[10px] uppercase tracking-wider text-white/40">Daily Leakage</span>
-                                                <span className="text-xl font-mono text-white">1,200 <span className="text-xs text-white/30">t</span></span>
+                                                <span className="text-[10px] uppercase tracking-wider text-white/40">Daily Plastic Waste</span>
+                                                <span className="text-xl font-mono text-white">400–500 <span className="text-xs text-white/30">t</span></span>
                                             </div>
                                             <div className="bg-[#0A0A0A] p-4 flex flex-col gap-1">
                                                 <span className="text-[10px] uppercase tracking-wider text-emerald-500/60">Annual Potential</span>
-                                                <span className="text-xl font-mono text-emerald-400">438k <span className="text-xs text-emerald-500/40">t</span></span>
+                                                <span className="text-xl font-mono text-emerald-400">~165k <span className="text-xs text-emerald-500/40">t</span></span>
                                             </div>
                                         </div>
                                     </div>

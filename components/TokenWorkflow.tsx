@@ -1,7 +1,7 @@
 
-import React, { useRef } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { Search, Factory, ShieldCheck, Coins, Globe, ArrowRight } from 'lucide-react';
+import { Search, Factory, ShieldCheck, Coins, Globe } from 'lucide-react';
 
 const steps = [
     {
@@ -27,7 +27,7 @@ const steps = [
         title: "Independent Audit",
         subtitle: "Verification",
         type: "Off-Chain",
-        description: "Third-party auditors (E&Y) validate the sensor data and physical mass balance before minting occurs.",
+        description: "Third-party auditors validate the sensor data and physical mass balance before minting occurs.",
         icon: ShieldCheck,
         color: "purple"
     },
@@ -52,73 +52,49 @@ const steps = [
 ];
 
 export const TokenWorkflow: React.FC = () => {
-    const scrollContainerRef = useRef<HTMLDivElement>(null);
-
-    const scroll = (direction: 'left' | 'right') => {
-        if (scrollContainerRef.current) {
-            const { current } = scrollContainerRef;
-            const scrollAmount = 380; // Adjusted card width
-            current.scrollBy({ left: direction === 'right' ? scrollAmount : -scrollAmount, behavior: 'smooth' });
-        }
-    };
-
     return (
-        <div className="w-full relative group/container">
-            
-            {/* Scroll Controls */}
-            <div className="flex justify-end gap-2 mb-6 px-6 md:px-0 max-w-7xl mx-auto">
-                <button onClick={() => scroll('left')} className="p-3 rounded-full border border-white/10 hover:bg-white/5 hover:border-white/20 transition-all text-white/50 hover:text-white backdrop-blur-sm">
-                    <ArrowRight className="w-4 h-4 rotate-180" />
-                </button>
-                <button onClick={() => scroll('right')} className="p-3 rounded-full border border-white/10 hover:bg-white/5 hover:border-white/20 transition-all text-white/50 hover:text-white backdrop-blur-sm">
-                    <ArrowRight className="w-4 h-4" />
-                </button>
-            </div>
-
-            {/* Horizontal Scroll Container */}
-            <div 
-                ref={scrollContainerRef}
-                className="flex overflow-x-auto gap-6 pb-12 pt-4 px-6 snap-x snap-mandatory hide-scrollbar max-w-7xl mx-auto"
-                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-            >
+        <div className="w-full relative">
+            {/* Grid Container - All Steps Visible */}
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-7xl mx-auto px-6 md:px-0">
                 {steps.map((step, idx) => (
-                    <motion.div 
+                    <motion.div
                         key={step.id}
-                        initial={{ opacity: 0, x: 50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         transition={{ delay: idx * 0.1, duration: 0.5 }}
-                        className="snap-center shrink-0 w-[340px] md:w-[380px] h-[480px] bg-white/[0.02] backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-8 relative overflow-hidden group hover:border-emerald-500/20 hover:bg-white/[0.04] transition-all duration-500 flex flex-col justify-between"
+                        viewport={{ once: true }}
+                        className="bg-white/[0.02] backdrop-blur-xl border border-white/10 rounded-[2rem] p-6 relative overflow-hidden group hover:border-emerald-500/20 hover:bg-white/[0.04] transition-all duration-500 flex flex-col"
                     >
-                        {/* Dynamic Gradient Glow - Reduced intensity */}
+                        {/* Dynamic Gradient Glow */}
                         <div className={`absolute -inset-[100px] opacity-0 group-hover:opacity-30 transition-opacity duration-700 blur-3xl bg-gradient-to-r ${step.color === 'emerald' ? 'from-emerald-500/10' : step.color === 'blue' ? 'from-blue-500/10' : step.color === 'purple' ? 'from-purple-500/10' : step.color === 'amber' ? 'from-amber-500/10' : 'from-cyan-500/10'} via-transparent to-transparent`} />
-                        
-                        {/* Huge Sleek Numbering - Modified Position & Opacity */}
-                        <div className="absolute -left-10 -top-12 text-[280px] font-display font-bold text-white/[0.04] group-hover:text-white/[0.08] transition-all duration-700 leading-none select-none z-0 pointer-events-none tracking-tighter">
+
+                        {/* Large Step Number */}
+                        <div className="absolute -right-4 -top-6 text-[120px] font-display font-bold text-white/[0.04] group-hover:text-white/[0.08] transition-all duration-700 leading-none select-none z-0 pointer-events-none tracking-tighter">
                             {step.id}
                         </div>
 
-                        <div className="relative z-10 pt-20">
+                        <div className="relative z-10">
                             {/* Header */}
-                            <div className="flex justify-between items-start mb-10">
-                                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br from-white/10 to-transparent border border-white/10 flex items-center justify-center group-hover:scale-105 transition-transform duration-500 shadow-2xl backdrop-blur-md text-white group-hover:${step.color === 'emerald' ? 'text-emerald-400' : step.color === 'blue' ? 'text-blue-400' : step.color === 'purple' ? 'text-purple-400' : step.color === 'amber' ? 'text-amber-400' : 'text-cyan-400'}`}>
-                                    <step.icon className="w-7 h-7 drop-shadow-lg" strokeWidth={1.5} />
+                            <div className="flex justify-between items-start mb-6">
+                                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br from-white/10 to-transparent border border-white/10 flex items-center justify-center group-hover:scale-105 transition-transform duration-500 shadow-xl backdrop-blur-md text-white group-hover:${step.color === 'emerald' ? 'text-emerald-400' : step.color === 'blue' ? 'text-blue-400' : step.color === 'purple' ? 'text-purple-400' : step.color === 'amber' ? 'text-amber-400' : 'text-cyan-400'}`}>
+                                    <step.icon className="w-5 h-5 drop-shadow-lg" strokeWidth={1.5} />
                                 </div>
-                                <div className="px-3 py-1.5 rounded-full border border-white/10 bg-black/20 text-[10px] font-bold uppercase tracking-[0.2em] text-white/40 backdrop-blur-md">
+                                <div className="px-2 py-1 rounded-full border border-white/10 bg-black/20 text-[9px] font-bold uppercase tracking-[0.15em] text-white/40 backdrop-blur-md">
                                     {step.type}
                                 </div>
                             </div>
 
                             {/* Title */}
                             <div className="mb-4">
-                                <span className={`text-xs font-bold uppercase tracking-widest mb-2 block ${step.color === 'emerald' ? 'text-emerald-400' : step.color === 'blue' ? 'text-blue-400' : step.color === 'purple' ? 'text-purple-400' : step.color === 'amber' ? 'text-amber-400' : 'text-cyan-400'}`}>{step.subtitle}</span>
-                                <h3 className="text-3xl font-display font-bold text-white leading-tight">{step.title}</h3>
+                                <span className={`text-[10px] font-bold uppercase tracking-widest mb-1.5 block ${step.color === 'emerald' ? 'text-emerald-400' : step.color === 'blue' ? 'text-blue-400' : step.color === 'purple' ? 'text-purple-400' : step.color === 'amber' ? 'text-amber-400' : 'text-cyan-400'}`}>{step.subtitle}</span>
+                                <h3 className="text-xl font-display font-bold text-white leading-tight">{step.title}</h3>
                             </div>
                         </div>
 
                         {/* Description */}
                         <div className="relative z-10 mt-auto">
-                            <div className="h-px w-full bg-gradient-to-r from-white/10 to-transparent mb-6" />
-                            <p className="text-white/60 text-base font-light leading-relaxed">
+                            <div className="h-px w-full bg-gradient-to-r from-white/10 to-transparent mb-4" />
+                            <p className="text-white/60 text-sm font-light leading-relaxed">
                                 {step.description}
                             </p>
                         </div>

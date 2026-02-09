@@ -85,7 +85,7 @@ export const Navbar: React.FC = () => {
                             <div className="w-8 h-8 rounded-lg bg-emerald-500/20 border border-emerald-500/50 flex items-center justify-center group-hover:bg-emerald-500/30 transition-colors">
                                 <div className="w-3 h-3 bg-emerald-400 rounded-sm shadow-[0_0_10px_rgba(52,211,153,0.8)]" />
                             </div>
-                            <span className="text-xl font-display font-bold tracking-tight text-white group-hover:text-emerald-100 transition-colors">Endpoint</span>
+                            <span className="text-xl font-display font-bold tracking-tight text-white group-hover:text-emerald-100 transition-colors">Endpoint Group</span>
                         </Link>
 
                         <LocationTag />

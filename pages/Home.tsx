@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Hero } from '../components/Hero';
 import { BentoFeatures } from '../components/BentoFeatures';
 import { ProofSection } from '../components/ProofSection';
@@ -7,13 +7,15 @@ import { CTASection } from '../components/CTASection';
 import { GlobalCarbonChart } from '../components/GlobalCarbonChart';
 import { FAQSection } from '../components/FAQSection';
 import { BlockchainSection } from '../components/BlockchainSection';
+import { PdfModal } from '../components/ui/PdfModal';
 import { motion, Variants } from 'framer-motion';
+import { FileText } from 'lucide-react';
 
 const SectionDivider = () => (
-    <div className="relative w-full h-px overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-emerald-500/20 to-transparent opacity-50" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-[1px] bg-emerald-400/50 blur-[2px]" />
-    </div>
+  <div className="relative w-full h-px overflow-hidden">
+    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-emerald-500/20 to-transparent opacity-50" />
+    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-[1px] bg-emerald-400/50 blur-[2px]" />
+  </div>
 );
 
 // Premium smooth easing for that "high-end" feel
@@ -21,13 +23,13 @@ const smoothEase = [0.25, 0.4, 0.25, 1];
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 40, filter: 'blur(8px)' },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
+  visible: {
+    opacity: 1,
+    y: 0,
     filter: 'blur(0px)',
-    transition: { 
-      duration: 1.0, 
-      ease: smoothEase 
+    transition: {
+      duration: 1.0,
+      ease: smoothEase
     }
   }
 };
@@ -44,14 +46,15 @@ const staggerSections: Variants = {
 };
 
 export const Home: React.FC = () => {
+  const [isPdfOpen, setIsPdfOpen] = useState(false);
   return (
     <div className="overflow-hidden">
       <Hero />
-      
+
       <SectionDivider />
 
-      <motion.div 
-        id="value" 
+      <motion.div
+        id="value"
         className="relative"
         initial="hidden"
         whileInView="visible"
@@ -73,8 +76,8 @@ export const Home: React.FC = () => {
         <BlockchainSection />
       </motion.div>
 
-      {/* Dedicated Carbon Credits Section */}
-      <motion.section 
+      {/* Global Plastic Finance Gap Section */}
+      <motion.section
         className="py-20 px-6 bg-[#050505] relative overflow-hidden"
         initial="hidden"
         whileInView="visible"
@@ -85,44 +88,58 @@ export const Home: React.FC = () => {
         <div className="absolute right-0 top-1/2 -translate-y-1/2 w-96 h-96 bg-emerald-500/5 blur-[100px] rounded-full pointer-events-none" />
 
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
-            <motion.div variants={fadeInUp}>
-                {/* Updated styling: gray text, white border */}
-                <h3 className="border border-white/20 rounded-full px-4 py-1.5 text-white/50 font-medium tracking-widest uppercase text-xs mb-8 w-fit">
-                  Global Carbon Deficit
-                </h3>
-                <h2 className="text-4xl md:text-6xl font-display font-semibold tracking-tighter text-white mb-8 leading-[1.1]">
-                    $250 Billion <br/> by 2050
-                </h2>
-                <p className="text-white/60 text-lg leading-relaxed mb-10 max-w-md font-light">
-                    The global market for voluntary carbon offsets is accelerating. As industries race to Net Zero, high-quality, verified removal credits are becoming the world's most valuable commodity.
-                    <br/><br/>
-                    <strong className="text-white font-medium">Morgan Stanley</strong> projects a 100x market expansion over the next three decades.
-                </p>
-                
-                <div className="flex gap-12 border-t border-white/5 pt-8">
-                    <div>
-                        <div className="text-3xl font-semibold tracking-tight text-white mb-1">15x</div>
-                        <div className="text-xs text-white/40 font-medium uppercase tracking-wider">Growth by 2030</div>
-                    </div>
-                     <div>
-                        <div className="text-3xl font-semibold tracking-tight text-white mb-1">100x</div>
-                        <div className="text-xs text-white/40 font-medium uppercase tracking-wider">Growth by 2050</div>
-                    </div>
-                </div>
-            </motion.div>
+          <motion.div variants={fadeInUp}>
+            <h3 className="border border-white/20 rounded-full px-4 py-1.5 text-white/50 font-medium tracking-widest uppercase text-xs mb-8 w-fit">
+              Global Plastic Finance Gap
+            </h3>
+            <h2 className="text-4xl md:text-6xl font-display font-semibold tracking-tighter text-white mb-8 leading-[1.1]">
+              $426B — $1.2T <br /> by 2040
+            </h2>
+            <p className="text-white/60 text-lg leading-relaxed mb-6 max-w-md font-light">
+              The global financing gap for plastic waste management is projected to grow exponentially. Without intervention, developing economies face mounting environmental and economic costs.
+              <br /><br />
+              <strong className="text-white font-medium">Source — World Bank</strong>: Financing Plastics Circularity report identifies the scale of investment needed.
+            </p>
 
-            <motion.div
-                variants={fadeInUp}
-                className="h-[500px] w-full"
+            <button
+              onClick={() => setIsPdfOpen(true)}
+              className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium text-emerald-400 border border-emerald-400/30 rounded-xl hover:bg-emerald-400/10 transition-all duration-300 mb-8"
             >
-                <div className="shadow-[0_40px_80px_-20px_rgba(0,0,0,0.5)] rounded-3xl h-full transform transition-transform hover:scale-[1.02] duration-700">
-                    <GlobalCarbonChart />
-                </div>
-            </motion.div>
+              <FileText className="w-4 h-4" />
+              Access World Bank Report
+            </button>
+
+            <div className="flex gap-12 border-t border-white/5 pt-8">
+              <div>
+                <div className="text-3xl font-semibold tracking-tight text-white mb-1">$426B</div>
+                <div className="text-xs text-white/40 font-medium uppercase tracking-wider">Min. Gap by 2040</div>
+              </div>
+              <div>
+                <div className="text-3xl font-semibold tracking-tight text-white mb-1">$1.2T</div>
+                <div className="text-xs text-white/40 font-medium uppercase tracking-wider">Max. Gap by 2040</div>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            variants={fadeInUp}
+            className="h-[500px] w-full"
+          >
+            <div className="shadow-[0_40px_80px_-20px_rgba(0,0,0,0.5)] rounded-3xl h-full transform transition-transform hover:scale-[1.02] duration-700">
+              <GlobalCarbonChart />
+            </div>
+          </motion.div>
         </div>
       </motion.section>
 
-      <motion.div 
+      <PdfModal
+        isOpen={isPdfOpen}
+        onClose={() => setIsPdfOpen(false)}
+        pdfUrl="/pdfs/world-bank-plastics.pdf"
+        title="World Bank — Financing Plastics Circularity"
+      />
+
+      <motion.div
         id="proof"
         initial="hidden"
         whileInView="visible"
@@ -131,7 +148,7 @@ export const Home: React.FC = () => {
       >
         <ProofSection />
       </motion.div>
-      
+
       <SectionDivider />
 
       <motion.div
@@ -144,7 +161,7 @@ export const Home: React.FC = () => {
       </motion.div>
 
       <SectionDivider />
-      
+
       <motion.div
         initial="hidden"
         whileInView="visible"

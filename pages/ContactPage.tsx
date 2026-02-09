@@ -24,7 +24,7 @@ export const ContactPage: React.FC = () => {
     setFormState('submitting');
 
     try {
-      const response = await fetch("https://formsubmit.co/ajax/fashoid.official@gmail.com", {
+      const response = await fetch("https://formsubmit.co/ajax/timgoltz@endpoint-group.com", {
         method: "POST",
         headers: {
           'Content-Type': 'application/json',
@@ -186,7 +186,7 @@ export const ContactPage: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="text-sm font-bold text-white mb-1">Headquarters</h3>
-                  <p className="text-sm text-white/50 group-hover:text-white/70 transition-colors">San Salvador, El Salvador</p>
+                  <p className="text-sm text-white/50 group-hover:text-white/70 transition-colors">El Salvador</p>
                 </div>
               </div>
 

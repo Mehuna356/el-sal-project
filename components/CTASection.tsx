@@ -58,7 +58,7 @@ export const CTASection: React.FC = () => {
           className="text-lg text-white/60 mb-10 max-w-2xl mx-auto font-light leading-relaxed"
         >
           Monitor your contribution through the investor portal.
-          Smart contracts handle all energy security distributions automatically on the 15th of each month.
+          Smart contracts handle all energy security distributions automatically.
         </motion.p>
 
         <motion.div
