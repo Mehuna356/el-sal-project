@@ -129,7 +129,7 @@ export const ElSalvadorPage: React.FC = () => {
 
                 <div className="max-w-7xl mx-auto relative z-10">
                     <div className="text-center mb-20 max-w-3xl mx-auto">
-                        <SleekBadge className="mb-6" color="neutral">National Strategic Value</SleekBadge>
+                        <SleekBadge className="mb-6" color="neutral" noDot>National Strategic Value</SleekBadge>
                         <h2 className="text-4xl md:text-5xl font-display font-bold tracking-tight text-white mb-6">Three Pillars of Sovereignty</h2>
                         <p className="text-white/60 text-lg font-light max-w-2xl mx-auto leading-relaxed">
                             A comprehensive framework securing economic stability, energy independence, and environmental control.
@@ -171,7 +171,7 @@ export const ElSalvadorPage: React.FC = () => {
                 <div className="mb-20 text-center max-w-3xl mx-auto">
                     {/* UPDATED BADGE COLOR */}
                     <div className="mb-6 inline-block">
-                        <SleekBadge color="platinum">MIO3 Platform</SleekBadge>
+                        <SleekBadge color="platinum" noDot>MIO3 Platform</SleekBadge>
                     </div>
                     <h2 className="text-4xl md:text-5xl font-display font-bold tracking-tight text-white mb-6">Token Ecosystem</h2>
                     <p className="text-white/60 text-lg leading-relaxed font-light">
@@ -266,7 +266,7 @@ export const ElSalvadorPage: React.FC = () => {
             {/* SECTION 5: GOVERNANCE & REGULATION */}
             <section className="px-6 mb-40">
                 <div className="mb-20 text-center">
-                    <SleekBadge className="mb-6" color="neutral">Compliance</SleekBadge>
+                    <SleekBadge className="mb-6" color="neutral" noDot>Compliance</SleekBadge>
                     <h2 className="text-4xl md:text-5xl font-display font-bold tracking-tight text-white">Governance & Regulation</h2>
                 </div>
                 <GovernanceBento />
@@ -275,7 +275,7 @@ export const ElSalvadorPage: React.FC = () => {
             {/* SECTION 6: TOKENIZATION WORKFLOW (HORIZONTAL) */}
             <section className="px-6 mb-40 bg-black">
                 <div className="max-w-4xl mx-auto mb-16 text-center">
-                    <SleekBadge className="mb-6" color="neutral">Process</SleekBadge>
+                    <SleekBadge className="mb-6" color="neutral" noDot>Process</SleekBadge>
                     <h2 className="text-4xl md:text-5xl font-display font-bold tracking-tight text-white mb-6">Tokenization Workflow</h2>
                     <p className="text-white/60 text-lg leading-relaxed font-light">
                         A seamless digital-to-physical pipeline ensuring total transparency.

@@ -39,7 +39,7 @@ export function LocationTag({ city = "", country = "El Salvador", timezone = "CS
       {/* Live pulse indicator */}
       <div className="relative flex items-center justify-center">
         <span className="relative flex h-2 w-2">
-          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75" />
+          <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-30" />
           <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
         </span>
       </div>

@@ -100,13 +100,13 @@ export const ProcessSchematic: React.FC = () => {
           className="relative w-24 h-24 rounded-2xl bg-[#050505] border border-white/10 flex items-center justify-center shadow-[0_0_50px_rgba(16,185,129,0.15)]"
         >
           {/* Inner Glow Pulse */}
-          <div className="absolute inset-0 rounded-2xl bg-emerald-500/5 animate-pulse" />
+          <div className="absolute inset-0 rounded-2xl bg-emerald-500/5" />
 
           {/* Core Icon */}
           <div className="relative z-10 flex flex-col items-center gap-2">
             <Cpu className="w-8 h-8 text-emerald-400" strokeWidth={1.5} />
             <div className="flex items-center gap-1.5">
-              <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+              <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-[0_0_4px_rgba(16,185,129,0.6)]" />
               <span className="text-[10px] font-bold text-white tracking-widest uppercase">CODE™</span>
             </div>
           </div>

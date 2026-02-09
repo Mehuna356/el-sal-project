@@ -163,7 +163,7 @@ export const ContactPage: React.FC = () => {
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 mb-6 backdrop-blur-sm">
               <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75"></span>
+                <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-30"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
               </span>
               <span className="text-[10px] font-semibold text-emerald-400 uppercase tracking-wider">Open for Partnerships</span>

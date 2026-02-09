@@ -9,7 +9,7 @@ import { FAQSection } from '../components/FAQSection';
 import { BlockchainSection } from '../components/BlockchainSection';
 import { PdfModal } from '../components/ui/PdfModal';
 import { motion, Variants } from 'framer-motion';
-import { FileText } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 
 const SectionDivider = () => (
   <div className="relative w-full h-px overflow-hidden">
@@ -103,10 +103,14 @@ export const Home: React.FC = () => {
 
             <button
               onClick={() => setIsPdfOpen(true)}
-              className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium text-emerald-400 border border-emerald-400/30 rounded-xl hover:bg-emerald-400/10 transition-all duration-300 mb-8"
+              className="group relative inline-flex items-center overflow-hidden px-6 py-3 text-sm font-medium text-white/80 bg-white/[0.04] border border-white/10 rounded-xl hover:bg-white/[0.08] hover:border-white/20 backdrop-blur-md transition-all duration-500 mb-8 shadow-[0_2px_10px_rgba(0,0,0,0.3)]"
             >
-              <FileText className="w-4 h-4" />
-              Access World Bank Report
+              <span className="mr-8 transition-opacity duration-500 group-hover:opacity-70">
+                Access World Bank Report
+              </span>
+              <span className="absolute right-1.5 top-1.5 bottom-1.5 z-10 grid w-8 place-items-center rounded-lg bg-white/10 transition-all duration-500 group-hover:w-[calc(100%-0.75rem)] group-active:scale-95">
+                <ChevronRight className="w-4 h-4 text-white/70" />
+              </span>
             </button>
 
             <div className="flex gap-12 border-t border-white/5 pt-8">

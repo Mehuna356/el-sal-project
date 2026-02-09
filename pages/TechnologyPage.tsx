@@ -120,7 +120,7 @@ export const TechnologyPage: React.FC = () => {
                         transition={{ duration: 0.8 }}
                         className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 mb-8 backdrop-blur-sm"
                     >
-                        <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                        <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_4px_rgba(52,211,153,0.6)]" />
                         <span className="text-[11px] font-bold tracking-widest text-white/70 uppercase">Patented Technology</span>
                     </motion.div>
 
@@ -155,7 +155,7 @@ export const TechnologyPage: React.FC = () => {
                         </div>
                         <button
                             onClick={() => navigate('/projects/el-salvador')}
-                            className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium text-emerald-400 border border-emerald-400/30 rounded-xl hover:bg-emerald-400/10 transition-all duration-300 whitespace-nowrap"
+                            className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium text-white/50 border border-white/15 rounded-xl hover:bg-white/5 hover:text-white/70 hover:border-white/25 transition-all duration-300 whitespace-nowrap"
                         >
                             See ESPP Process Architecture <ArrowRight className="w-4 h-4" />
                         </button>
@@ -277,7 +277,7 @@ export const TechnologyPage: React.FC = () => {
                                     </p>
                                     <div className="flex flex-wrap gap-3">
                                         {["100% Remote Monitoring Capability"].map((tag, i) => (
-                                            <span key={i} className="px-4 py-2 bg-emerald-500/10 rounded-lg text-sm font-semibold text-emerald-400 border border-emerald-500/20">{tag}</span>
+                                            <span key={i} className="px-4 py-2 bg-white/[0.04] rounded-lg text-sm font-semibold text-white/50 border border-white/10">{tag}</span>
                                         ))}
                                     </div>
                                 </div>
@@ -286,7 +286,7 @@ export const TechnologyPage: React.FC = () => {
                                     <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.05)_50%,transparent_75%)] bg-[length:10px_10px]" />
                                     <Lock className="w-10 h-10 text-emerald-500/50" />
                                     <div className="absolute bottom-2 left-3 text-[10px] font-mono text-emerald-500">SYSTEM SECURE</div>
-                                    <div className="absolute top-2 right-3 w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse" />
+                                    <div className="absolute top-2 right-3 w-1.5 h-1.5 bg-emerald-500 rounded-full shadow-[0_0_6px_rgba(16,185,129,0.6)]" />
                                 </div>
                             </div>
                         </div>
