@@ -5,7 +5,7 @@ import { ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { Hero3D } from './Hero3D';
 import { Spotlight, GridBackground } from './ui/Spotlight';
-import { SleekBadge } from './ui/SleekBadge';
+import { AnimatedShinyText } from './ui/AnimatedShinyText';
 
 const itemVariants: Variants = {
   hidden: { opacity: 0, y: 30, filter: 'blur(10px)' },
@@ -61,7 +61,15 @@ export const Hero: React.FC = () => {
         >
           {/* Subtle Hook Text */}
           <motion.div variants={itemVariants} className="mb-8">
-            <SleekBadge color="emerald">Sovereign Energy Infrastructure</SleekBadge>
+            <div className="group rounded-full border border-white/5 bg-white/[0.03] backdrop-blur-sm text-base transition-all ease-in hover:cursor-pointer hover:bg-white/[0.06] inline-flex">
+              <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.15em] text-white/70 transition ease-out hover:text-white/90 hover:duration-300">
+                <span className="relative flex h-1.5 w-1.5 mr-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500 shadow-[0_0_6px_rgba(16,185,129,0.6)]"></span>
+                </span>
+                Sovereign Energy Infrastructure
+              </AnimatedShinyText>
+            </div>
           </motion.div>
 
           {/* Main Headline */}
