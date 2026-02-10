@@ -37,7 +37,7 @@ const listItemVariants: Variants = {
 
 export const BlockchainSection: React.FC = () => {
     return (
-        <section className="relative py-20 px-6 bg-[#020402] border-t border-white/5 overflow-hidden">
+        <section className="relative py-24 px-6 bg-[#050505] border-t border-white/5 overflow-hidden">
 
             {/* Background Grid */}
             <div className="absolute inset-0 bg-[linear-gradient(rgba(16,185,129,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(16,185,129,0.03)_1px,transparent_1px)] bg-[size:40px_40px]" />

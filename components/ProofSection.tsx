@@ -42,6 +42,13 @@ const stats = [
     }
 ];
 
+const colorMap: Record<string, string> = {
+    emerald: '#10b981',
+    blue: '#3b82f6',
+    purple: '#a855f7',
+    orange: '#f97316',
+};
+
 // Refined easing
 const smoothEase = [0.25, 0.4, 0.25, 1];
 
@@ -105,7 +112,7 @@ const CountUp = ({ end, duration }: { end: number, duration: number }) => {
 
 export const ProofSection: React.FC = () => {
     return (
-        <section className="relative py-20 bg-[#020402] border-t border-white/5 overflow-hidden">
+        <section className="relative py-24 px-6 bg-[#050505] overflow-hidden">
 
             {/* Background Effects */}
             <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:64px_64px] opacity-20" />
@@ -175,7 +182,8 @@ export const ProofSection: React.FC = () => {
                                     initial={{ width: 0 }}
                                     whileInView={{ width: '100%' }}
                                     transition={{ delay: 0.5 + idx * 0.1, duration: 1.5 }}
-                                    className={`h-full bg-${stat.color}-500 opacity-50`}
+                                    className="h-full opacity-50"
+                                    style={{ backgroundColor: colorMap[stat.color] || '#10b981' }}
                                 />
                             </div>
                         </motion.div>

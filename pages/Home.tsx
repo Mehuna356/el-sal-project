@@ -8,15 +8,11 @@ import { GlobalCarbonChart } from '../components/GlobalCarbonChart';
 import { FAQSection } from '../components/FAQSection';
 import { BlockchainSection } from '../components/BlockchainSection';
 import { PdfModal } from '../components/ui/PdfModal';
+import { SleekBadge } from '../components/ui/SleekBadge';
 import { motion, Variants } from 'framer-motion';
 import { ChevronRight } from 'lucide-react';
 
-const SectionDivider = () => (
-  <div className="relative w-full h-px overflow-hidden">
-    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-emerald-500/20 to-transparent opacity-50" />
-    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-[1px] bg-emerald-400/50 blur-[2px]" />
-  </div>
-);
+
 
 // Premium smooth easing for that "high-end" feel
 const smoothEase = [0.25, 0.4, 0.25, 1];
@@ -51,7 +47,6 @@ export const Home: React.FC = () => {
     <div className="overflow-hidden">
       <Hero />
 
-      <SectionDivider />
 
       <motion.div
         id="value"
@@ -78,7 +73,7 @@ export const Home: React.FC = () => {
 
       {/* Global Plastic Finance Gap Section */}
       <motion.section
-        className="py-20 px-6 bg-[#050505] relative overflow-hidden"
+        className="py-24 px-6 bg-[#050505] relative overflow-hidden"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-20%" }}
@@ -89,9 +84,9 @@ export const Home: React.FC = () => {
 
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
           <motion.div variants={fadeInUp}>
-            <h3 className="border border-white/20 rounded-full px-4 py-1.5 text-white/50 font-medium tracking-widest uppercase text-xs mb-8 w-fit">
+            <SleekBadge color="neutral" noDot className="mb-8">
               Global Plastic Finance Gap
-            </h3>
+            </SleekBadge>
             <h2 className="text-4xl md:text-6xl font-display font-semibold tracking-tighter text-white mb-8 leading-[1.1]">
               $426B — $1.2T <br /> by 2040
             </h2>
@@ -153,7 +148,6 @@ export const Home: React.FC = () => {
         <ProofSection />
       </motion.div>
 
-      <SectionDivider />
 
       <motion.div
         initial="hidden"
@@ -164,7 +158,6 @@ export const Home: React.FC = () => {
         <FAQSection />
       </motion.div>
 
-      <SectionDivider />
 
       <motion.div
         initial="hidden"

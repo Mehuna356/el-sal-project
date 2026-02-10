@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Home, User, Cpu, FolderOpen, Mail, MapPin, ChevronDown } from 'lucide-react';
 import { Button } from './ui/Button';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { LocationTag } from './ui/LocationTag';
+
 import { MenuBar, MenuItem } from './ui/MenuBar';
 
 export const Navbar: React.FC = () => {
@@ -78,7 +78,7 @@ export const Navbar: React.FC = () => {
             <motion.header
                 className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b border-transparent ${isScrolled || isMobileMenuOpen ? 'border-white/5 bg-black/80 backdrop-blur-xl shadow-lg' : ''}`}
             >
-                <div className="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+                <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
                     {/* Logo */}
                     <div className="flex items-center gap-6">
                         <Link to="/" className="flex items-center gap-2 cursor-pointer group z-50" onClick={() => setIsMobileMenuOpen(false)}>
@@ -87,8 +87,6 @@ export const Navbar: React.FC = () => {
                             </div>
                             <span className="text-xl font-display font-bold tracking-tight text-white group-hover:text-emerald-100 transition-colors">Endpoint Group</span>
                         </Link>
-
-                        <LocationTag />
                     </div>
 
                     {/* Desktop Nav - 3D Menu Bar */}
@@ -109,7 +107,9 @@ export const Navbar: React.FC = () => {
 
                     {/* Mobile Toggle */}
                     <button
-                        className="md:hidden text-white/70 hover:text-emerald-400 z-50 p-2"
+                        className="md:hidden flex items-center z-50"
+                        aria-label="Toggle menu"
+                        aria-expanded={isMobileMenuOpen}
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                     >
                         {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}

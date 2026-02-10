@@ -1,10 +1,11 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform, Variants } from 'framer-motion';
 import { Button } from './ui/Button';
-import { ArrowRight, ChevronDown } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { Hero3D } from './Hero3D';
 import { Spotlight, GridBackground } from './ui/Spotlight';
+import { SleekBadge } from './ui/SleekBadge';
 
 const itemVariants: Variants = {
   hidden: { opacity: 0, y: 30, filter: 'blur(10px)' },
@@ -39,12 +40,7 @@ export const Hero: React.FC = () => {
   const y = useTransform(scrollYProgress, [0, 0.5], [0, 100]);
   const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.95]);
 
-  const handleScrollDown = () => {
-    window.scrollTo({
-      top: window.innerHeight,
-      behavior: 'smooth'
-    });
-  };
+
 
   return (
     <section ref={ref} className="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden bg-black/[0.96]">
@@ -64,11 +60,8 @@ export const Hero: React.FC = () => {
           animate="visible"
         >
           {/* Subtle Hook Text */}
-          <motion.div variants={itemVariants} className="flex items-center gap-2 mb-8">
-            <div className="w-1 h-1 bg-emerald-400 rounded-full" />
-            <span className="text-sm font-medium tracking-[0.2em] text-emerald-400/80 uppercase">
-              Sovereign Energy Infrastructure
-            </span>
+          <motion.div variants={itemVariants} className="mb-8">
+            <SleekBadge color="emerald">Sovereign Energy Infrastructure</SleekBadge>
           </motion.div>
 
           {/* Main Headline */}
@@ -84,7 +77,7 @@ export const Hero: React.FC = () => {
           {/* Sub-headline with Data */}
           <motion.p
             variants={itemVariants}
-            className="max-w-xl text-lg text-white/70 mb-10 leading-relaxed font-light"
+            className="max-w-xl text-lg text-white/70 mb-8 leading-relaxed font-light"
           >
             Deploying <strong className="text-white font-medium">35 Tonnes/Day</strong> pyrolysis infrastructure to secure energy independence and eliminate plastic pollution.
           </motion.p>
@@ -129,19 +122,7 @@ export const Hero: React.FC = () => {
 
       </div>
 
-      {/* Scroll Indicator */}
-      <motion.button
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.5, duration: 1 }}
-        onClick={handleScrollDown}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/30 hover:text-emerald-400 transition-colors cursor-pointer z-30 group"
-      >
-        <span className="text-[10px] uppercase tracking-widest font-semibold group-hover:tracking-[0.2em] transition-all">Scroll</span>
-        <div className="p-2 rounded-full border border-white/10 group-hover:border-emerald-500/50 transition-colors">
-          <ChevronDown className="w-4 h-4 animate-bounce" />
-        </div>
-      </motion.button>
+
 
     </section>
   );
