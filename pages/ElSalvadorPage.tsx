@@ -7,6 +7,7 @@ import { RoadmapCard } from '../components/ui/RoadmapCard';
 import { StrategicValueCards } from '../components/StrategicValueCards';
 import { TokenWorkflow } from '../components/TokenWorkflow';
 import { GovernanceBento } from '../components/GovernanceBento';
+import { ProcessSchematic } from '../components/ProcessSchematic';
 import { SleekBadge } from '../components/ui/SleekBadge';
 import { LightingBadge } from '../components/ui/LightingBadge';
 import { AnimatedCounter } from '../components/ui/AnimatedCounter';
@@ -153,7 +154,7 @@ export const ElSalvadorPage: React.FC = () => {
                             <div key={i} className="text-center group cursor-default">
                                 <div className="text-5xl font-display font-bold text-transparent bg-clip-text bg-gradient-to-b from-white to-white/60 mb-3 group-hover:from-emerald-300 group-hover:to-emerald-600 transition-all duration-500 tracking-tight">
                                     {stat.isRange ? (
-                                        <span>{stat.val}<span className="text-3xl">{stat.suffix}</span></span>
+                                        <span>{stat.val}{stat.suffix}</span>
                                     ) : (
                                         <AnimatedCounter value={stat.val} suffix={stat.suffix} decimalPlaces={typeof stat.val === 'number' && stat.val % 1 !== 0 ? 1 : 0} />
                                     )}
@@ -260,6 +261,20 @@ export const ElSalvadorPage: React.FC = () => {
                             </div>
                         </div>
                     </motion.div>
+                </div>
+            </section>
+
+            {/* SECTION 4.5: PROCESS ARCHITECTURE */}
+            <section className="px-6 mb-40">
+                <div className="max-w-7xl mx-auto">
+                    <div className="mb-16 text-center">
+                        <SleekBadge className="mb-6" color="neutral" noDot>Engineering</SleekBadge>
+                        <h2 className="text-4xl md:text-5xl font-display font-bold tracking-tight text-white mb-6">ESPP Process Architecture</h2>
+                        <p className="text-white/60 text-lg leading-relaxed max-w-2xl mx-auto font-light">
+                            End-to-end pyrolysis workflow — from feedstock intake to fuel output — monitored by CODE™ intelligence.
+                        </p>
+                    </div>
+                    <ProcessSchematic />
                 </div>
             </section>
 

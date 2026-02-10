@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Card } from '../components/ui/Card';
-import { Atom, Factory, Zap, CheckCircle2, Ruler, ShieldCheck, Lock, FileText, ArrowRight } from 'lucide-react';
+import { Atom, Factory, Zap, CheckCircle2, Ruler, ShieldCheck, Lock, ArrowRight, ChevronRight } from 'lucide-react';
 import { ProcessSchematic } from '../components/ProcessSchematic';
 import { PdfModal } from '../components/ui/PdfModal';
 import { useNavigate } from 'react-router-dom';
@@ -244,10 +244,14 @@ export const TechnologyPage: React.FC = () => {
                                 </p>
                                 <button
                                     onClick={() => setIsPdfOpen(true)}
-                                    className="inline-flex items-center gap-2 text-sm font-medium text-emerald-400 border border-emerald-400/30 px-4 py-2 rounded-xl hover:bg-emerald-400/10 transition-all duration-300"
+                                    className="group relative inline-flex items-center overflow-hidden px-6 py-3 text-sm font-medium text-white/80 bg-white/[0.04] border border-white/10 rounded-xl hover:bg-white/[0.08] hover:border-white/20 backdrop-blur-md transition-all duration-500 shadow-[0_2px_10px_rgba(0,0,0,0.3)]"
                                 >
-                                    <FileText className="w-4 h-4" />
-                                    Access US DOE Document on Renewable Fuel
+                                    <span className="mr-8 transition-opacity duration-500 group-hover:opacity-70">
+                                        Access US DOE Document on Renewable Fuel
+                                    </span>
+                                    <span className="absolute right-1.5 top-1.5 bottom-1.5 z-10 grid w-8 place-items-center rounded-lg bg-white/10 transition-all duration-500 group-hover:w-[calc(100%-0.75rem)] group-active:scale-95">
+                                        <ChevronRight className="w-4 h-4 text-white/70" />
+                                    </span>
                                 </button>
                             </div>
                         </div>

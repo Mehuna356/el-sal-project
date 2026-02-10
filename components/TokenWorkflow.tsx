@@ -61,10 +61,19 @@ export const TokenWorkflow: React.FC = () => {
                         key={step.id}
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ delay: idx * 0.1, duration: 0.5 }}
+                        whileHover={{ y: -8, scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        transition={{ delay: idx * 0.1, duration: 0.5, type: "spring", stiffness: 300, damping: 20 }}
                         viewport={{ once: true }}
-                        className="bg-white/[0.02] backdrop-blur-xl border border-white/10 rounded-[2rem] p-6 relative overflow-hidden group hover:border-emerald-500/20 hover:bg-white/[0.04] transition-all duration-500 flex flex-col"
+                        className="bg-white/[0.02] backdrop-blur-xl border border-white/10 rounded-[2rem] p-6 relative overflow-hidden group hover:border-emerald-500/20 hover:bg-white/[0.04] hover:shadow-[0_0_30px_rgba(255,255,255,0.05)] transition-all duration-500 flex flex-col cursor-pointer"
                     >
+                        {/* Shimmer sweep on hover */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent transform -skew-x-12 translate-x-full group-hover:translate-x-[-200%] transition-transform duration-1000 pointer-events-none z-20" />
+
+                        {/* Corner glow accents */}
+                        <div className="absolute top-0 left-0 w-14 h-14 bg-gradient-to-br from-white/10 to-transparent rounded-br-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                        <div className="absolute bottom-0 right-0 w-14 h-14 bg-gradient-to-tl from-white/10 to-transparent rounded-tl-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
                         {/* Dynamic Gradient Glow */}
                         <div className={`absolute -inset-[100px] opacity-0 group-hover:opacity-30 transition-opacity duration-700 blur-3xl bg-gradient-to-r ${step.color === 'emerald' ? 'from-emerald-500/10' : step.color === 'blue' ? 'from-blue-500/10' : step.color === 'purple' ? 'from-purple-500/10' : step.color === 'amber' ? 'from-amber-500/10' : 'from-cyan-500/10'} via-transparent to-transparent`} />
 
