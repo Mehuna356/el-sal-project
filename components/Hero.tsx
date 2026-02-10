@@ -36,14 +36,13 @@ export const Hero: React.FC = () => {
   });
   const navigate = useNavigate();
 
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
-  const y = useTransform(scrollYProgress, [0, 0.5], [0, 100]);
-  const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.95]);
+  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+  const y = useTransform(scrollYProgress, [0, 0.8], [0, 60]);
 
 
 
   return (
-    <section ref={ref} className="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden bg-black/[0.96]">
+    <section ref={ref} className="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden bg-black">
 
       {/* --- NEW SPOTLIGHT & GRID EFFECT --- */}
       <Spotlight className="-top-40 left-0 md:left-60 md:-top-20 z-10" />
