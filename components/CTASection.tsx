@@ -50,14 +50,15 @@ export const CTASection: React.FC = () => {
           className="text-4xl md:text-6xl font-display font-semibold tracking-tight text-white mb-6"
         >
           Energy Security Profit <br />
-          <span className="text-emerald-400">Starts Here</span>
+          <span className="text-emerald-400">Distribution Protocol</span>
         </motion.h2>
 
         <motion.p
           variants={fadeInUp}
           className="text-lg text-white/60 mb-10 max-w-2xl mx-auto font-light leading-relaxed"
         >
-          Join the sovereign energy revolution. Smart contracts handle all distributions automatically.
+          Monitor your contribution through the investor portal.
+          Smart contracts handle all energy security distributions automatically.
         </motion.p>
 
         <motion.div
