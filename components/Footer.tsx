@@ -1,5 +1,5 @@
-import React from 'react';
-import { Mail, MapPin, ArrowUp } from 'lucide-react';
+import React, { useRef, useState } from 'react';
+import { Mail, MapPin } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 const data = {
@@ -15,14 +15,41 @@ const data = {
 
 export const Footer: React.FC = () => {
   const location = useLocation();
+  const footerRef = useRef<HTMLElement>(null);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [isHovering, setIsHovering] = useState(false);
 
   if (location.pathname === '/contact') {
     return null;
   }
 
+  const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
+    if (!footerRef.current) return;
+    const rect = footerRef.current.getBoundingClientRect();
+    setMousePos({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    });
+  };
+
   return (
-    <footer className="bg-[#020402] border-t border-white/5 pt-16 pb-8 relative z-10">
-      <div className="mx-auto max-w-7xl px-6">
+    <footer
+      ref={footerRef}
+      onMouseMove={handleMouseMove}
+      onMouseEnter={() => setIsHovering(true)}
+      onMouseLeave={() => setIsHovering(false)}
+      className="bg-[#020402] border-t border-white/5 pt-16 pb-8 relative z-10 overflow-hidden"
+    >
+      {/* Cursor Spotlight Effect */}
+      <div
+        className="pointer-events-none absolute -inset-px transition-opacity duration-500 z-0"
+        style={{
+          opacity: isHovering ? 1 : 0,
+          background: `radial-gradient(600px circle at ${mousePos.x}px ${mousePos.y}px, rgba(16, 185, 129, 0.04), transparent 40%)`,
+        }}
+      />
+
+      <div className="mx-auto max-w-7xl px-6 relative z-10">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-3">
 
           {/* Brand Column */}
@@ -107,19 +134,6 @@ export const Footer: React.FC = () => {
               <Link to="/privacy" className="hover:text-emerald-400 transition-all duration-300">Privacy Policy</Link>
               <Link to="/terms" className="hover:text-emerald-400 transition-all duration-300">Terms of Service</Link>
             </div>
-          </div>
-        </div>
-        {/* Floating Scroll-to-Top Pill */}
-        <div className="flex items-center justify-center mt-8 pb-2">
-          <div className="flex items-center rounded-full border border-dotted border-white/15 hover:border-white/30 transition-all duration-300 group">
-            <button
-              type="button"
-              onClick={() => window.scroll({ top: 0, behavior: 'smooth' })}
-              className="rounded-full px-5 py-2 text-white/30 hover:text-emerald-400 transition-all duration-300 flex items-center gap-2"
-            >
-              <ArrowUp className="h-3.5 w-3.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
-              <span className="text-[10px] uppercase tracking-widest font-semibold">Back to top</span>
-            </button>
           </div>
         </div>
       </div>
