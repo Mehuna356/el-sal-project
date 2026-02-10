@@ -140,8 +140,8 @@ export const AboutPage: React.FC = () => {
             initials: "TG",
             bio: "International Business Development Strategist and macroanalytics specialist with expertise in energy production within circular economy and ESG principles of the New Green Economy.",
             highlights: [
-                "Co-founded CarbonConnect, securing $60M capital for carbon offset platform.",
-                "Developed international markets for blockchain tokenization of hard assets."
+                "15+ years of experience in greentech development including First Nations/Indigenous partnership development.",
+                "Developing international markets for blockchain tokenization of hard assets."
             ],
             image: "/images/team/tim-goltz.jpg"
         },
