@@ -25,7 +25,7 @@ export const Button: React.FC<ButtonProps> = ({
   };
 
   const variants = {
-    primary: "bg-emerald-600 text-white hover:bg-emerald-500 shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_30px_rgba(16,185,129,0.6)]",
+    primary: "bg-emerald-600 text-white hover:bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.15)] hover:shadow-[0_0_12px_rgba(16,185,129,0.25)]",
     secondary: "bg-white/5 border border-white/10 text-white hover:bg-white/10 hover:border-white/20 backdrop-blur-sm"
   };
 
@@ -50,11 +50,8 @@ export const Button: React.FC<ButtonProps> = ({
           {children}
         </span>
 
-        {/* Glow behind */}
-        <div className="absolute inset-0 bg-emerald-600/20 blur-md group-hover:bg-emerald-500/30 transition-all duration-500" />
-
-        {/* Border Glow Simulation */}
-        <div className="absolute inset-0 rounded-lg border border-emerald-400/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        {/* Subtle border glow on hover */}
+        <div className="absolute inset-0 rounded-xl border border-emerald-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       </motion.button>
     );
   }

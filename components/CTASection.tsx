@@ -67,17 +67,16 @@ export const CTASection: React.FC = () => {
           <Button
             variant="primary"
             size="lg"
-            className="shadow-[0_20px_40px_-10px_rgba(16,185,129,0.4)]"
             onClick={() => navigate('/projects/el-salvador')}
           >
-            Start Your Investment <Compass className="ml-2 w-5 h-5" />
+            Discover Projects <Compass className="ml-2 w-5 h-5" />
           </Button>
           <Button
             variant="secondary"
             size="lg"
-            onClick={() => navigate('/about')}
+            onClick={() => navigate('/technology')}
           >
-            About Endpoint
+            Explore Technology
           </Button>
         </motion.div>
       </motion.div>

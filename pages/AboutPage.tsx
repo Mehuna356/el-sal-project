@@ -330,6 +330,7 @@ export const AboutPage: React.FC = () => {
 
             {/* 5. LEADERSHIP (Detailed Grid) */}
             <motion.section
+                id="leadership"
                 className="py-32 px-6 bg-[#050505]"
                 initial="hidden"
                 whileInView="visible"

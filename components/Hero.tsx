@@ -59,20 +59,16 @@ export const Hero: React.FC = () => {
           animate="visible"
         >
           {/* Subtle Hook Text */}
-          <motion.div variants={itemVariants} className="mb-8">
+          <motion.div variants={itemVariants} className="mb-4 md:mb-8">
             <div className="group rounded-full border border-white/5 bg-white/[0.03] backdrop-blur-sm text-base transition-all ease-in hover:cursor-pointer hover:bg-white/[0.06] inline-flex">
-              <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.15em] text-white/70 transition ease-out hover:text-white/90 hover:duration-300">
-                <span className="relative flex h-1.5 w-1.5 mr-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500 shadow-[0_0_6px_rgba(16,185,129,0.6)]"></span>
-                </span>
+              <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.15em] text-[#9ca3af] transition ease-out hover:text-[#d1d5db] hover:duration-300">
                 Sovereign Energy Infrastructure
               </AnimatedShinyText>
             </div>
           </motion.div>
 
           {/* Main Headline */}
-          <motion.div variants={itemVariants} className="mb-8">
+          <motion.div variants={itemVariants} className="mb-4 md:mb-8">
             <h1 className="font-display text-5xl md:text-7xl font-bold tracking-tighter leading-[1.1] text-white drop-shadow-[0_0_30px_rgba(255,255,255,0.15)]">
               Turning Waste into <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-emerald-200 to-white filter drop-shadow-[0_0_30px_rgba(16,185,129,0.4)]">
@@ -84,7 +80,7 @@ export const Hero: React.FC = () => {
           {/* Sub-headline with Data */}
           <motion.p
             variants={itemVariants}
-            className="max-w-xl text-lg text-white/70 mb-8 leading-relaxed font-light"
+            className="max-w-xl text-lg text-white/70 mb-4 md:mb-8 leading-snug md:leading-relaxed font-light"
           >
             Deploying <strong className="text-white font-medium">35 Tonnes/Day</strong> pyrolysis infrastructure to secure energy independence and eliminate plastic pollution.
           </motion.p>
