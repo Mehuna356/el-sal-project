@@ -142,8 +142,7 @@ export const FeaturedSection: React.FC = () => {
                     {/* Centered Badge */}
                     <div className="flex justify-center mb-16">
                         <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-white/10 bg-[#0a0a0a] shadow-xl backdrop-blur-md z-10">
-                            <div className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_6px_rgba(16,185,129,0.5)]" />
-                            <span className="text-sm font-bold text-white uppercase tracking-widest">A Project of Critical National Infrastructure</span>
+                            <span className="text-sm font-semibold text-[#9ca3af] uppercase tracking-widest">A Project of Critical National Infrastructure</span>
                         </div>
                     </div>
 
