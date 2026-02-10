@@ -121,7 +121,21 @@ export const ElSalvadorPage: React.FC = () => {
                 </div>
             </section>
 
-            {/* SECTION 1.5: FEATURED CONTEXT */}
+            {/* SECTION 1.5: PROCESS ARCHITECTURE */}
+            <section className="px-6 mb-40 pt-20">
+                <div className="max-w-7xl mx-auto">
+                    <div className="mb-16 text-center">
+                        <SleekBadge className="mb-6" color="neutral" noDot>Engineering</SleekBadge>
+                        <h2 className="text-4xl md:text-5xl font-display font-bold tracking-tight text-white mb-6">ESPP Process Architecture</h2>
+                        <p className="text-white/60 text-lg leading-relaxed max-w-2xl mx-auto font-light">
+                            End-to-end pyrolysis workflow — from feedstock intake to fuel output — monitored by CODE™ intelligence.
+                        </p>
+                    </div>
+                    <ProcessSchematic />
+                </div>
+            </section>
+
+            {/* SECTION 1.7: FEATURED CONTEXT */}
             <FeaturedSection />
 
             {/* SECTION 2: THREE PILLARS (STRATEGIC VALUE) */}
@@ -264,19 +278,6 @@ export const ElSalvadorPage: React.FC = () => {
                 </div>
             </section>
 
-            {/* SECTION 4.5: PROCESS ARCHITECTURE */}
-            <section className="px-6 mb-40">
-                <div className="max-w-7xl mx-auto">
-                    <div className="mb-16 text-center">
-                        <SleekBadge className="mb-6" color="neutral" noDot>Engineering</SleekBadge>
-                        <h2 className="text-4xl md:text-5xl font-display font-bold tracking-tight text-white mb-6">ESPP Process Architecture</h2>
-                        <p className="text-white/60 text-lg leading-relaxed max-w-2xl mx-auto font-light">
-                            End-to-end pyrolysis workflow — from feedstock intake to fuel output — monitored by CODE™ intelligence.
-                        </p>
-                    </div>
-                    <ProcessSchematic />
-                </div>
-            </section>
 
             {/* SECTION 5: GOVERNANCE & REGULATION */}
             <section className="px-6 mb-40">

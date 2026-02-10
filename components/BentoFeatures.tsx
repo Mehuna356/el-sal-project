@@ -63,7 +63,18 @@ export const BentoFeatures: React.FC = () => {
                 >
 
                     {/* 1. CODE TECHNOLOGY (Large, Featured) */}
-                    <motion.div variants={itemVariants} className="md:col-span-6 lg:col-span-8 row-span-2 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.5)] rounded-2xl">
+                    <motion.div
+                        variants={itemVariants}
+                        whileHover={{ y: -6 }}
+                        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                        className="md:col-span-6 lg:col-span-8 row-span-2 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.5)] rounded-2xl cursor-pointer group/card relative overflow-hidden"
+                    >
+                        {/* Shimmer sweep */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent transform -skew-x-12 translate-x-full group-hover/card:translate-x-[-200%] transition-transform duration-1000 pointer-events-none z-30 rounded-2xl" />
+                        {/* Corner glow */}
+                        <div className="absolute top-0 left-0 w-20 h-20 bg-gradient-to-br from-emerald-500/10 to-transparent rounded-br-3xl opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none z-30" />
+                        <div className="absolute bottom-0 right-0 w-20 h-20 bg-gradient-to-tl from-emerald-500/10 to-transparent rounded-tl-3xl opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none z-30" />
+
                         <GlowingBorder className="h-full">
                             <div className="h-full p-8 md:p-12 flex flex-col justify-between relative overflow-hidden bg-[#080808]">
                                 {/* Background Animation */}
@@ -98,7 +109,15 @@ export const BentoFeatures: React.FC = () => {
                     </motion.div>
 
                     {/* 2. BLOCKCHAIN TRANSPARENCY (Tall) */}
-                    <motion.div variants={itemVariants} className="md:col-span-3 lg:col-span-4 row-span-2 bg-[#080808] border border-white/10 rounded-2xl p-6 relative overflow-hidden group hover:border-emerald-500/30 transition-colors flex flex-col shadow-[0_20px_40px_-10px_rgba(0,0,0,0.5)]">
+                    <motion.div
+                        variants={itemVariants}
+                        whileHover={{ y: -5 }}
+                        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                        className="md:col-span-3 lg:col-span-4 row-span-2 bg-[#080808] border border-white/10 rounded-2xl p-6 relative overflow-hidden group hover:border-emerald-500/30 transition-all duration-500 flex flex-col shadow-[0_20px_40px_-10px_rgba(0,0,0,0.5)] cursor-pointer"
+                    >
+                        {/* Shimmer sweep */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent transform -skew-x-12 translate-x-full group-hover:translate-x-[-200%] transition-transform duration-1000 pointer-events-none z-20" />
+
                         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.1),transparent_50%)]" />
 
                         <div className="relative z-10 mb-6">
@@ -145,7 +164,15 @@ export const BentoFeatures: React.FC = () => {
                     </motion.div>
 
                     {/* 3. SUPPLY CHAIN RESILIENCE */}
-                    <motion.div variants={itemVariants} className="md:col-span-3 lg:col-span-4 bg-[#080808] border border-white/10 rounded-2xl p-6 relative group overflow-hidden shadow-[0_20px_40px_-10px_rgba(0,0,0,0.5)]">
+                    <motion.div
+                        variants={itemVariants}
+                        whileHover={{ y: -4, scale: 1.01 }}
+                        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                        className="md:col-span-3 lg:col-span-4 bg-[#080808] border border-white/10 rounded-2xl p-6 relative group overflow-hidden shadow-[0_20px_40px_-10px_rgba(0,0,0,0.5)] cursor-pointer hover:border-white/20 transition-all duration-500"
+                    >
+                        {/* Shimmer sweep */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent transform -skew-x-12 translate-x-full group-hover:translate-x-[-200%] transition-transform duration-1000 pointer-events-none z-20" />
+
                         <div className="flex items-center gap-4 mb-4 relative z-10">
                             <div className="p-2 bg-orange-500/10 rounded-lg border border-orange-500/20">
                                 <Truck className="w-5 h-5 text-orange-400" />
@@ -188,19 +215,27 @@ export const BentoFeatures: React.FC = () => {
                     </motion.div>
 
                     {/* 4. ASSET BACKED */}
-                    <motion.div variants={itemVariants} className="md:col-span-3 lg:col-span-4 bg-[#080808] border border-white/10 rounded-2xl p-6 relative hover:bg-white/5 transition-colors group shadow-[0_20px_40px_-10px_rgba(0,0,0,0.5)]">
-                        <div className="flex items-center gap-4 mb-4">
+                    <motion.div
+                        variants={itemVariants}
+                        whileHover={{ y: -4, scale: 1.01 }}
+                        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                        className="md:col-span-3 lg:col-span-4 bg-[#080808] border border-white/10 rounded-2xl p-6 relative overflow-hidden group hover:border-white/20 hover:bg-white/5 transition-all duration-500 shadow-[0_20px_40px_-10px_rgba(0,0,0,0.5)] cursor-pointer"
+                    >
+                        {/* Shimmer sweep */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent transform -skew-x-12 translate-x-full group-hover:translate-x-[-200%] transition-transform duration-1000 pointer-events-none z-20" />
+
+                        <div className="flex items-center gap-4 mb-4 relative z-10">
                             <div className="p-2 bg-emerald-500/10 rounded-lg border border-emerald-500/20">
                                 <ShieldCheck className="w-5 h-5 text-emerald-400" />
                             </div>
                             <h3 className="text-lg font-semibold tracking-tight text-white">Asset Backed</h3>
                         </div>
-                        <p className="text-sm text-white/50 mb-4 font-light">
+                        <p className="text-sm text-white/50 mb-4 font-light relative z-10">
                             Every token is backed by physical machinery and real estate.
                         </p>
 
                         {/* Mini Visualization */}
-                        <div className="flex gap-2">
+                        <div className="flex gap-2 relative z-10">
                             <div className="h-1.5 w-8 rounded-full bg-emerald-500" />
                             <div className="h-1.5 w-8 rounded-full bg-emerald-500/50" />
                             <div className="h-1.5 w-8 rounded-full bg-emerald-500/20" />
@@ -208,19 +243,27 @@ export const BentoFeatures: React.FC = () => {
                     </motion.div>
 
                     {/* 5. 24/7 Monitoring */}
-                    <motion.div variants={itemVariants} className="md:col-span-3 lg:col-span-4 bg-[#080808] border border-white/10 rounded-2xl p-6 relative hover:bg-white/5 transition-colors group shadow-[0_20px_40px_-10px_rgba(0,0,0,0.5)]">
-                        <div className="flex items-center gap-4 mb-4">
+                    <motion.div
+                        variants={itemVariants}
+                        whileHover={{ y: -4, scale: 1.01 }}
+                        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                        className="md:col-span-3 lg:col-span-4 bg-[#080808] border border-white/10 rounded-2xl p-6 relative overflow-hidden group hover:border-white/20 hover:bg-white/5 transition-all duration-500 shadow-[0_20px_40px_-10px_rgba(0,0,0,0.5)] cursor-pointer"
+                    >
+                        {/* Shimmer sweep */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent transform -skew-x-12 translate-x-full group-hover:translate-x-[-200%] transition-transform duration-1000 pointer-events-none z-20" />
+
+                        <div className="flex items-center gap-4 mb-4 relative z-10">
                             <div className="p-2 bg-purple-500/10 rounded-lg border border-purple-500/20">
                                 <Zap className="w-5 h-5 text-purple-400" />
                             </div>
                             <h3 className="text-lg font-semibold tracking-tight text-white">24/7 Monitoring</h3>
                         </div>
-                        <p className="text-sm text-white/50 mb-4 font-light">
+                        <p className="text-sm text-white/50 mb-4 font-light relative z-10">
                             Real-time data feeds from the facility ensure optimal performance.
                         </p>
 
                         {/* Live Pulse Viz */}
-                        <div className="flex items-end gap-1 h-6">
+                        <div className="flex items-end gap-1 h-6 relative z-10">
                             {[40, 70, 50, 90, 60, 80].map((h, i) => (
                                 <motion.div
                                     key={i}

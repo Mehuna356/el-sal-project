@@ -72,6 +72,37 @@ const FlowLine = ({ startY, endY, direction = 'right', delay }: { startY: string
         transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
         className="opacity-40"
       />
+      {/* Animated bean dot traveling along the path */}
+      {[0, 1].map((i) => (
+        <motion.circle
+          key={i}
+          r="3"
+          fill={direction === 'right' ? '#10b981' : '#34d399'}
+          filter="url(#beanGlow)"
+          initial={{ offsetDistance: "0%" }}
+          animate={{ offsetDistance: "100%" }}
+          transition={{
+            duration: 2.5,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: i * 1.25,
+          }}
+          style={{
+            offsetPath: `path('${d}')`,
+            offsetRotate: '0deg',
+          }}
+          opacity={0.8}
+        />
+      ))}
+      <defs>
+        <filter id="beanGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="3" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
     </svg>
   )
 }
@@ -117,9 +148,18 @@ export const ProcessSchematic: React.FC = () => {
         </motion.div>
       </div>
 
-      {/* --- CONNECTORS CENTER -> RIGHT --- */}
+      {/* --- CONNECTORS CENTER -> RIGHT with animated beans --- */}
       <div className="absolute inset-0 pointer-events-none">
         <svg className="w-full h-full overflow-visible" viewBox="0 0 800 400">
+          <defs>
+            <filter id="beanGlowOut" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="3" result="blur" />
+              <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+          </defs>
           {[25, 50, 75].map((destY, i) => {
             const d = `M 440,200 C 550,200 600,${destY * 4} 700,${destY * 4}`;
             return (
@@ -136,6 +176,28 @@ export const ProcessSchematic: React.FC = () => {
                   transition={{ duration: 1, repeat: Infinity, ease: "linear", delay: i * 0.1 }}
                   className="opacity-50"
                 />
+                {/* Bean dot traveling along this output path */}
+                {[0, 1].map((j) => (
+                  <motion.circle
+                    key={j}
+                    r="2.5"
+                    fill="#34d399"
+                    filter="url(#beanGlowOut)"
+                    initial={{ offsetDistance: "0%" }}
+                    animate={{ offsetDistance: "100%" }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: i * 0.3 + j * 1,
+                    }}
+                    style={{
+                      offsetPath: `path('${d}')`,
+                      offsetRotate: '0deg',
+                    }}
+                    opacity={0.7}
+                  />
+                ))}
               </g>
             )
           })}
