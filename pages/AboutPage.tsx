@@ -342,7 +342,7 @@ export const AboutPage: React.FC = () => {
                         variants={sectionVariants}
                         className="text-4xl font-display font-bold mb-20 text-center cursor-default text-white"
                     >
-                        Leadership
+                        Meet Our Leadership
                     </motion.h2>
 
                     <motion.div

@@ -92,7 +92,7 @@ export const Footer: React.FC = () => {
                 </li>
                 <li>
                   <Link to="/about#leadership" className="text-white/60 transition-all duration-300 hover:text-emerald-400 hover:translate-x-1 inline-block">
-                    Team
+                    Our Leadership
                   </Link>
                 </li>
                 <li>
