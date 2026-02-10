@@ -9,6 +9,7 @@ import { TokenWorkflow } from '../components/TokenWorkflow';
 import { GovernanceBento } from '../components/GovernanceBento';
 import { ProcessSchematic } from '../components/ProcessSchematic';
 import { SleekBadge } from '../components/ui/SleekBadge';
+import { TextReveal } from '../components/ui/TextReveal';
 import { LightingBadge } from '../components/ui/LightingBadge';
 import { AnimatedCounter } from '../components/ui/AnimatedCounter';
 import { DottedGlowBackground } from '../components/ui/DottedGlowBackground';
@@ -83,7 +84,7 @@ export const ElSalvadorPage: React.FC = () => {
                         </h1>
 
                         <p className="text-xl text-white/70 mb-10 max-w-xl leading-relaxed font-light tracking-wide">
-                            Solving structural economic vulnerability by converting a national liability—waste—into a strategic fuel asset.
+                            <TextReveal>Solving structural economic vulnerability by converting a national liability—waste—into a strategic fuel asset.</TextReveal>
                         </p>
 
                         <div className="flex gap-4">
@@ -218,8 +219,7 @@ export const ElSalvadorPage: React.FC = () => {
                             </div>
 
                             <p className="text-white/70 text-lg leading-relaxed mb-8 font-light">
-                                Represents a Real-World Asset (RWA) investment in the physical pyrolysis plant (Tokenized Debt/Equity).
-                                Capital is used to fund construction, with ROI derived directly from fuel sales.
+                                <TextReveal>Represents a Real-World Asset (RWA) investment in the physical pyrolysis plant (Tokenized Debt/Equity). Capital is used to fund construction, with ROI derived directly from fuel sales.</TextReveal>
                             </p>
 
                             <div className="flex items-center justify-between pt-8 border-t border-white/5">
@@ -474,7 +474,7 @@ export const ElSalvadorPage: React.FC = () => {
             </section>
 
             {/* SECTION 8: ROADMAP */}
-            <section className="bg-white/[0.02] border-y border-white/5 py-32 mb-32">
+            <section id="critical-timeline" className="bg-white/[0.02] border-y border-white/5 py-32 mb-32">
                 <div className="px-6">
                     <RoadmapCard
                         items={roadmapItems}
@@ -490,7 +490,7 @@ export const ElSalvadorPage: React.FC = () => {
                 <Button
                     variant="primary"
                     size="lg"
-                    className="px-12 py-5 text-xl shadow-[0_0_50px_rgba(16,185,129,0.3)] hover:shadow-[0_0_80px_rgba(16,185,129,0.5)]"
+                    className="px-12 py-5 text-xl"
                     onClick={() => navigate('/contact')}
                 >
                     Contact Us <ArrowRight className="ml-2 w-5 h-5" />

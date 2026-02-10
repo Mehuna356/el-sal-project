@@ -161,12 +161,8 @@ export const ContactPage: React.FC = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="lg:pr-10"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 mb-6 backdrop-blur-sm">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-30"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-              </span>
-              <span className="text-[10px] font-semibold text-emerald-400 uppercase tracking-wider">Open for Partnerships</span>
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-6 backdrop-blur-sm">
+              <span className="text-[10px] font-semibold text-[#9ca3af] uppercase tracking-wider">Open for Partnerships</span>
             </div>
 
             <h1 className="text-5xl md:text-7xl font-display font-bold tracking-tight text-white mb-6 leading-[0.95]">

@@ -49,28 +49,28 @@ export const Footer: React.FC = () => {
               <p className="text-lg font-medium text-white">Company</p>
               <ul className="mt-8 space-y-4 text-sm">
                 <li>
-                  <Link to="/about" className="text-white/60 transition hover:text-emerald-400">
+                  <Link to="/about" className="text-white/60 transition-all duration-300 hover:text-emerald-400 hover:translate-x-1 inline-block">
                     About Endpoint
                   </Link>
                 </li>
                 <li>
-                  <Link to="/technology" className="text-white/60 transition hover:text-emerald-400">
+                  <Link to="/technology" className="text-white/60 transition-all duration-300 hover:text-emerald-400 hover:translate-x-1 inline-block">
                     CODE™ Technology
                   </Link>
                 </li>
                 <li>
-                  <Link to="/projects/el-salvador" className="text-white/60 transition hover:text-emerald-400">
+                  <Link to="/projects/el-salvador" className="text-white/60 transition-all duration-300 hover:text-emerald-400 hover:translate-x-1 inline-block">
                     El Salvador Project
                   </Link>
                 </li>
                 <li>
-                  <Link to="/about#leadership" className="text-white/60 transition hover:text-emerald-400">
+                  <Link to="/about#leadership" className="text-white/60 transition-all duration-300 hover:text-emerald-400 hover:translate-x-1 inline-block">
                     Team
                   </Link>
                 </li>
                 <li>
-                  <Link to="/contact" className="text-white/60 transition hover:text-emerald-400">
-                    Contact Us
+                  <Link to="/projects/el-salvador#critical-timeline" className="text-white/60 transition-all duration-300 hover:text-emerald-400 hover:translate-x-1 inline-block">
+                    ESPP Roadmap
                   </Link>
                 </li>
               </ul>
@@ -98,14 +98,14 @@ export const Footer: React.FC = () => {
         </div>
 
         <div className="mt-12 border-t border-white/5 pt-6">
-          <div className="text-center sm:flex sm:justify-between sm:text-left">
+          <div className="text-center sm:flex sm:justify-between sm:text-left items-center">
             <p className="text-sm text-white/40">
               <span className="block sm:inline">© 2026 Endpoint Group. All rights reserved.</span>
             </p>
 
-            <div className="mt-4 flex justify-center gap-6 text-sm text-white/40 sm:mt-0">
-              <Link to="/privacy" className="hover:text-emerald-400 transition">Privacy Policy</Link>
-              <Link to="/terms" className="hover:text-emerald-400 transition">Terms of Service</Link>
+            <div className="mt-4 inline-flex items-center gap-6 text-sm text-white/40 sm:mt-0 rounded-full border border-transparent hover:border-dotted hover:border-white/20 px-4 py-1.5 transition-all duration-300">
+              <Link to="/privacy" className="hover:text-emerald-400 transition-all duration-300">Privacy Policy</Link>
+              <Link to="/terms" className="hover:text-emerald-400 transition-all duration-300">Terms of Service</Link>
             </div>
           </div>
         </div>
