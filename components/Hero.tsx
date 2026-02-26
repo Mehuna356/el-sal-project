@@ -82,7 +82,7 @@ export const Hero: React.FC = () => {
             variants={itemVariants}
             className="max-w-xl text-lg text-white/70 mb-4 md:mb-8 leading-snug md:leading-relaxed font-light"
           >
-            Deploying <strong className="text-white font-medium">35 Tonnes/Day</strong> pyrolysis infrastructure to secure energy independence and eliminate plastic pollution.
+            Deploying pyrolysis infrastructure to secure energy independence and eliminate plastic pollution.
           </motion.p>
 
           {/* CTAs */}
